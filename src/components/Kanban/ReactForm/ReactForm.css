@@ -1,0 +1,83 @@
+
+@import url('./css/animation.css');
+@import url('./css/Button.css');
+@import url('./css/Options.css');
+
+
+
+@font-face {
+	font-family: IRANSans;
+	font-style: normal;
+	font-weight: 500;
+	src: url('html/fonts/eot/IRANSansWeb_Medium.eot');
+	src: url('html/fonts/eot/IRANSansWeb_Medium.eot?#iefix') format('embedded-opentype'),  /* IE6-8 */
+		 url('html/fonts/woff2/IRANSansWeb_Medium.woff2') format('woff2'),  /* FF39+,Chrome36+, Opera24+*/
+		 url('html/fonts/woff/IRANSansWeb_Medium.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+		 url('html/fonts/ttf/IRANSansWeb_Medium.ttf') format('truetype');
+}
+body {
+    font-size: 1em;
+    font-family: 'IRANSans'
+}
+
+
+:root {
+    /* General */ 
+    --label-size :0.7;
+    --label-color : #9e9e9e; /* label + border */
+    --text-size :.8;
+    --text-color : #333;
+    --tag-size : .8;
+  
+    /* Spaces */
+    --space-around : 2.5; 
+
+    /* Colors */ 
+    --danger-color : #F44336;
+    --success-color : #4CAF50;
+    --warning-color : #FF9800;
+    --info-color : #145AF9;
+    --default-color : #f4f4f4;
+    --danger-gradient-color : #d50000;
+    --success-gradient-color : #388E3C;
+    --warning-gradient-color : #FF5722;
+    --info-gradient-color : #0e4d96;
+    --disabled-color : #ddd;
+    --focus-color : #145AF9;
+    --border-color :rgba(0, 0, 0, 0.12) ;
+    --light-focus-color : #145af973;;
+    --gradient-color : #0a3d79;
+    
+
+
+    /* Input */
+    --input-height:1;
+    /*Its better never changes this any thing is not working good*/
+
+    /* Tag */
+    --tag-bg-color : #e4e4e4;
+    --tag-text-color : rgba(0,0,0,0.6);
+     
+}
+
+/************************
+* Fix Bug
+*************************/ 
+[class^="rf-"] * {
+    box-sizing:unset
+}
+
+/************************
+* Back Drop
+*************************/   
+.rf-backdrop {
+  background: rgba(0,0,0,.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+

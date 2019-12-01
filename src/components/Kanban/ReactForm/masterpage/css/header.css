@@ -1,0 +1,93 @@
+.header {
+    -webkit-user-select: none; /* Safari 3.1+ */
+    -moz-user-select: none; /* Firefox 2+ */
+    -ms-user-select: none; /* IE 10+ */
+    user-select: none; /* Standard syntax */
+    margin:0;
+    
+  }
+  
+  .navbar .dropable-button-icon {
+    font-size: 14px;
+  }
+  .header .navbar{
+    position:relative;
+    font-size:16px;
+    text-align: center;
+    padding:0 12px;
+    background:#0063f8;
+  }
+  .navbar-item{
+    position: relative;
+    
+    font-size:12px;
+  }
+  
+  .header .navbar .page-title{
+    display: inline-block;
+    font-size:14px;
+    height:48px;
+    line-height:48px;
+  }
+  
+  .header .tabbar{
+    font-size:14px;
+    padding:0 6px;
+    background:#2699fb;
+  }
+  .sidebar .dragable-button-item-icon{
+    font-size:20px;
+  }
+  .tab-item{
+    border-radius:3px 3px 0px 0px;
+    background:rgba(0,0,0,0.1);
+    margin:0 2px;
+    padding:0 12px;
+    cursor: pointer;
+  }
+  
+  .tab-item:hover{
+    background:rgba(0,0,0,0.3);
+    
+  }
+  
+  
+  .page-logo{
+    height:14px;
+    margin:0 6px;
+  }
+  .toolbar{
+    white-space: nowrap;
+    border-bottom: 1px solid #eee
+  }
+  .main-header .toolbar{
+    border-bottom: 1px solid #ddd;
+  }
+  .toolbar-item{
+    position: relative;
+    float:left;
+    font-size:12px;
+    cursor :pointer;
+  }
+  
+  .toolbar-item:hover{
+    color:#2699fb;  
+  }
+  
+  .toolbar-item-button div{
+    float:left;
+    width:20px;
+    text-align: center;
+    font-size:14px;
+  }
+  
+  .back-drop{
+    position: fixed;
+    background: rgba(0,0,0,.0);
+    height:100%;
+    width:100%;
+    right:0;
+    top:0;
+  }
+  
+  

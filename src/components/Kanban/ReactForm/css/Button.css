@@ -1,0 +1,220 @@
+/************************
+* Button
+*************************/
+.r-button {
+	margin-top:  calc(var(--space-around) * .5rem) ;
+	margin-bottom: calc(var(--space-around) * .5rem) ;
+	  text-decoration: none;
+	  padding: 8px 16px;
+	  border: 0;
+	  outline: 0;
+	  background: none;
+	  margin-right: 8px;
+	  border-radius: 3px;
+	  position: relative;
+	  overflow: hidden;
+	  cursor: pointer;
+	  color: var(--text-color);
+	  fill: var(--text-color);
+  
+	  font-size: calc(var(--text-size) * .9em);
+	  transition: ease 0.3s all;	
+	display: inline-block;
+	  font-family: inherit;
+	  
+  
+  }
+  
+  /* Icon & Svg */
+  .r-button > span,
+  .r-button > svg{
+	  color: currentColor;
+	  fill: currentColor;
+	font-size: 18px;
+	height: 18px;
+	width: 18px;
+	  display: inline-block;
+  
+	vertical-align: text-bottom;
+	  line-height: 14px;
+  
+  
+  
+  }
+  
+  /* Fix svg extra size */
+  .r-button > svg {
+	  position: relative;
+	  top: -2px
+  }
+  
+  
+  
+  /* Hover */
+  .r-button:hover {
+	  opacity: .9;
+	  transition: ease 0.3s all;
+  }
+  .r-button.r-success:hover ,
+  .r-button.r-warning:hover ,
+  .r-button.r-danger:hover ,
+  .r-button.r-info:hover {
+		box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 2px 1px -2px rgba(0,0,0,0.12), 0 1px 4px 0 rgba(0,0,0,0.2);
+  
+  }
+  
+  
+  /* Sizes */
+  .r-button.r-xs {
+	  padding: 4px 8px;
+  }
+  
+  .r-button.r-lg {
+	  padding: 10px 20px;
+  
+  
+  
+  }
+  
+  /* Colors */
+  .r-button.r-success {
+	  background: var(--success-color);
+	  color: #fff;
+	  fill: #fff;
+  }
+  .r-button.r-info {
+	  background: var(--info-color);
+	  color: #fff;
+	  fill: #fff;
+  }
+  .r-button.r-danger {
+	  background: var(--danger-color);
+	  color: #fff;
+	  fill: #fff;
+  }
+  .r-button.r-warning {
+	  background: var(--warning-color);
+	  color: #fff;
+	  fill: #fff;
+  }
+  .r-button.r-default {
+	background: var(--default-color);
+  }
+  .r-button.r-warning span,
+  .r-button.r-info span,
+  .r-button.r-danger  span{
+	  color: #fff
+  }
+  
+  /* Gradient Colors */
+  .r-button.r-success.r-gradient {
+	  background: linear-gradient(40deg, var(--success-color), var(--success-gradient-color))!important;
+  }
+  .r-button.r-danger.r-gradient {
+	  background: linear-gradient(40deg, var(--danger-color), var(--danger-gradient-color))!important;
+  }
+  .r-button.r-warning.r-gradient {
+	  background: linear-gradient(40deg, var(--warning-color), var(--warning-gradient-color))!important;
+  }
+  .r-button.r-info.r-gradient {
+	  background: linear-gradient(40deg, var(--info-color), var(--info-gradient-color))!important;
+  }
+  /* Shapes */
+  .r-button.r-rounded {
+	  border-radius: 30px
+  }
+  .r-button.r-bordered {
+	  background: none;
+	  border: 1px solid var(--label-color)
+  }
+  /* NoSpace */
+  .r-button.r-nospace {
+	  margin: 0
+  }
+  
+  /* Effect */
+  .r-ripple:before {
+	  content: '';
+	  position: absolute;
+	  top: 50%;
+	  left: 50%;
+	  width: 0;
+	  height: 0;
+	  transform: translate(-50%, -50%);
+	  border-radius: 50%;
+	  background-color: currentColor;
+	  visibility: hidden;
+	  z-index: 2;
+  }
+  .r-ripple:not(:active):before {
+	  animation: ripple 2s cubic-bezier(0, 0, 0.2, 1);
+	  transition: visibility 2s step-end;
+  }
+  .r-ripple:active:before {
+	  visibility: visible;
+  }
+  .r-ripple-xs:before {
+	  content: '';
+	  position: absolute;
+	  top: 50%;
+	  left: 50%;
+	  width: 0;
+	  height: 0;
+	  transform: translate(-50%, -50%);
+	  border-radius: 50%;
+	  background-color: currentColor;
+	  visibility: hidden;
+	  z-index: 2;
+  }
+  .r-ripple-xs:not(:active):before {
+	  animation: ripple-xs .7s cubic-bezier(0, 0, 0.2, 1);
+	  transition: visibility .7s step-end;
+  }
+  .r-ripple-xs:active:before {
+	  visibility: visible;
+  }
+  @keyframes ripple {
+	  0% {
+		  width: 0;
+		  height: 0;
+		  opacity: 0.5;
+	  }
+	  100% {
+		  width: 250px;
+		  height: 250px;
+		  opacity: 0;
+	  }
+  }
+  @keyframes ripple-xs {
+	  0% {
+		  width: 0;
+		  height: 0;
+		  opacity: 0.5;
+	  }
+	  100% {
+		  width: 50px;
+		  height: 50px;
+		  opacity: 0;
+	  }
+  }
+  
+  /* Rtl */
+  .r-button.r-rtl {
+	  text-align: right;
+	  margin-right: unset;
+	  margin-left: 8px;
+  }
+  
+  
+  /* Focus */
+  .r-button::-moz-focus-inner {
+	  border: 0;
+  }
+	
+  /* Disabled */
+  .r-button .r-button-text.r-disabled,
+  .r-button .r-button-text.r-disabled:hover {
+	  opacity: .3;
+	  cursor: not-allowed
+  }
+  

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>React Form</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./fonts//material/css/materialdesignicons.css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/scripts.js"></script>
+    <style>
+            table {
+            border-collapse: collapse;
+            }
+    
+            table, th, td {
+            border: 1px solid black;
+            }
+        </style>
+</head>
+<body>
+
+  
+    <div style="text-align:center;width:600px;padding:10px;border:1px solid #ddd; margin:20px;float: left; box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);">
+        <h2 style="padding-top:30px;text-align: center">LTR</h2>
+
+
+       
+        <button type="button" class="r-button r-ripple r-info r-lg"> 
+                <svg  viewBox="0 0 24 24">
+                        <path  d="M12,17C10.89,17 10,16.1 10,15C10,13.89 10.89,13 12,13A2,2 0 0,1 14,15A2,2 0 0,1 12,17M18,20V10H6V20H18M18,8A2,2 0 0,1 20,10V20A2,2 0 0,1 18,22H6C4.89,22 4,21.1 4,20V10C4,8.89 4.89,8 6,8H7V6A5,5 0 0,1 12,1A5,5 0 0,1 17,6V8H18M12,3A3,3 0 0,0 9,6V8H15V6A3,3 0 0,0 12,3Z" />
+                    </svg>
+
+            Download
+        </button>
+        <button type="button" class="r-button r-ripple r-info"> 
+            <span class="mdi mdi-home"></span>
+            Download
+        </button>
+        <button type="button" class="r-button r-ripple r-xs r-info"> 
+            <span class="mdi mdi-home"></span>
+
+            Download
+        </button><br />
+
+
+        <button type="button" class="r-button r-ripple r-lg r-info r-gradient"> Download</button>
+        <button type="button" class="r-button r-ripple r-info r-gradient"> Download </button>
+        <button type="button" class="r-button r-ripple r-xs r-info r-gradient"> Download </button>
+        <button type="button" class="r-button r-ripple r-xs r-info  r-gradient r-rounded"> Download </button><br />
+
+        <button type="button" class="r-button r-ripple r-lg r-info"> Download</button>
+        <button type="button" class="r-button r-ripple r-info"> Download </button>
+        <button type="button" class="r-button r-ripple r-xs r-info"> Download </button>
+        <button type="button" class="r-button r-ripple r-xs r-info r-rounded"> Download </button><br />
+
+        <button type="button" class="r-button r-ripple r-lg r-success"> Download</button>
+        <button type="button" class="r-button r-ripple r-success"> Download </button>
+        <button type="button" class="r-button r-ripple r-xs r-success"> Download </button>
+        <button type="button" class="r-button r-ripple r-xs r-success r-rounded"> Download </button><br />
+
+
+        <button type="button" class="r-button r-ripple r-lg r-warning"> Download</button>
+        <button type="button" class="r-button r-ripple r-warning"> Download </button>
+        <button type="button" class="r-button r-ripple r-xs r-warning"> Download </button>
+        <button type="button" class="r-button r-ripple r-xs r-warning r-rounded"> Download </button><br />
+
+
+        <button type="button" class="r-button r-ripple r-lg r-danger"> Download</button>
+        <button type="button" class="r-button r-ripple r-danger"> Download </button>
+        <button type="button" class="r-button r-ripple r-xs r-danger"> Download </button>
+        <button type="button" class="r-button r-ripple r-xs r-danger r-rounded"> Download </button><br />
+
+
+        <button type="button" class="r-button r-ripple r-lg r-default"> Download</button>
+        <button type="button" class="r-button r-ripple r-default"> Download </button>
+        <button type="button" class="r-button r-ripple r-xs r-default"> Download </button>
+        <button type="button" class="r-button r-ripple r-xs r-default  r-rounded"> Download </button><br /> 
+
+        <button type="button" class="r-button r-ripple r-lg r-bordered"> Download</button>
+        <button type="button" class="r-button r-ripple r-bordered"> Download </button>
+        <button type="button" class="r-button r-ripple r-xs r-bordered"> Download </button>
+        <button type="button" class="r-button r-ripple r-xs r-bordered  r-rounded"> Download </button><br /> 
+
+        <button type="button" class="r-button r-ripple r-lg"> Download</button>
+        <button type="button" class="r-button r-ripple "> Download </button>
+        <button type="button" class="r-button r-ripple r-xs "> Download </button>
+        <button type="button" class="r-button r-ripple r-xs r-rounded"> Download </button><br /> 
+
+        <h2 style="padding-top:30px;text-align: center">Use in Table</h2>
+
+        <table>
+            <tr>
+                <td>Title</td>
+                <td>Operation</td>
+            </tr>
+            <tr>
+                <td>Objective 1</td>
+                <td>
+                        <button type="button" class="r-button r-ripple r-xs r-success  r-gradient  r-nospace"> Add </button>
+                        <button type="button" class="r-button r-ripple r-xs r-info  r-gradient  r-nospace"> Information </button>
+                        <button type="button" class="r-button r-ripple r-xs r-danger  r-gradient  r-nospace"> Delete </button>
+
+                </td>
+
+            </tr>
+        </table>
+
+       
+     
+   
+    </div>
+    <div style="text-align:center;direction:rtl;width:600px;padding:10px;border:1px solid #ddd; margin:20px;float: left; box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);">
+        
+     
+        <h2 style="padding-top:30px;text-align: center"> RTL</h2>
+
+        
+        <button type="button" class="r-button r-ripple r-info r-lg r-rtl"> 
+            <span class="mdi mdi-home"></span>
+
+            دانلود نرم افزار
+        </button>
+        <button type="button" class="r-button r-ripple r-info r-rtl"> 
+            <span class="mdi mdi-home"></span>
+            دانلود نرم افزار
+        </button>
+        <button type="button" class="r-button r-ripple r-xs r-info r-rtl"> 
+            <span class="mdi mdi-home"></span>
+
+            دانلود نرم افزار
+        </button><br />
+
+
+        <button type="button" class="r-button r-ripple r-lg r-info r-gradient"> دانلود نرم افزار</button>
+        <button type="button" class="r-button r-ripple r-info r-gradient"> دانلود نرم افزار </button>
+        <button type="button" class="r-button r-ripple r-xs r-info r-gradient"> دانلود نرم افزار </button>
+        <button type="button" class="r-button r-ripple r-xs r-info  r-gradient r-rounded"> دانلود نرم افزار </button><br />
+
+        <button type="button" class="r-button r-ripple r-lg r-info"> دانلود نرم افزار</button>
+        <button type="button" class="r-button r-ripple r-info"> دانلود نرم افزار </button>
+        <button type="button" class="r-button r-ripple r-xs r-info"> دانلود نرم افزار </button>
+        <button type="button" class="r-button r-ripple r-xs r-info r-rounded"> دانلود نرم افزار </button><br />
+
+        <button type="button" class="r-button r-ripple r-lg r-success"> دانلود نرم افزار</button>
+        <button type="button" class="r-button r-ripple r-success"> دانلود نرم افزار </button>
+        <button type="button" class="r-button r-ripple r-xs r-success"> دانلود نرم افزار </button>
+        <button type="button" class="r-button r-ripple r-xs r-success r-rounded"> دانلود نرم افزار </button><br />
+
+
+        <button type="button" class="r-button r-ripple r-lg r-warning"> دانلود نرم افزار</button>
+        <button type="button" class="r-button r-ripple r-warning"> دانلود نرم افزار </button>
+        <button type="button" class="r-button r-ripple r-xs r-warning"> دانلود نرم افزار </button>
+        <button type="button" class="r-button r-ripple r-xs r-warning r-rounded"> دانلود نرم افزار </button><br />
+
+
+        <button type="button" class="r-button r-ripple r-lg r-danger"> دانلود نرم افزار</button>
+        <button type="button" class="r-button r-ripple r-danger"> دانلود نرم افزار </button>
+        <button type="button" class="r-button r-ripple r-xs r-danger"> دانلود نرم افزار </button>
+        <button type="button" class="r-button r-ripple r-xs r-danger r-rounded"> دانلود نرم افزار </button><br />
+
+
+        <button type="button" class="r-button r-ripple r-lg r-default"> دانلود نرم افزار</button>
+        <button type="button" class="r-button r-ripple r-default"> دانلود نرم افزار </button>
+        <button type="button" class="r-button r-ripple r-xs r-default"> دانلود نرم افزار </button>
+        <button type="button" class="r-button r-ripple r-xs r-default  r-rounded"> دانلود نرم افزار </button><br /> 
+
+        <button type="button" class="r-button r-ripple r-lg r-bordered"> دانلود نرم افزار</button>
+        <button type="button" class="r-button r-ripple r-bordered"> دانلود نرم افزار </button>
+        <button type="button" class="r-button r-ripple r-xs r-bordered"> دانلود نرم افزار </button>
+        <button type="button" class="r-button r-ripple r-xs r-bordered  r-rounded"> دانلود نرم افزار </button><br /> 
+
+        <button type="button" class="r-button r-ripple r-lg"> دانلود نرم افزار</button>
+        <button type="button" class="r-button r-ripple "> دانلود نرم افزار </button>
+        <button type="button" class="r-button r-ripple r-xs "> دانلود نرم افزار </button>
+        <button type="button" class="r-button r-ripple r-xs r-rounded"> دانلود نرم افزار </button><br /> 
+
+        <h2 style="padding-top:30px;text-align: center">Use in Table</h2>
+
+        <table dir="rtl">
+            <tr>
+                <td>عنوان</td>
+                <td>عملیات</td>
+            </tr>
+            <tr>
+                <td>هدف شماره 1</td>
+                <td>
+                        <button type="button" class="r-button r-ripple r-xs r-success  r-gradient  r-nospace"> افزودن </button>
+                        <button type="button" class="r-button r-ripple r-xs r-info  r-gradient  r-nospace"> اطلاعات </button>
+                        <button type="button" class="r-button r-ripple r-xs r-danger  r-gradient  r-nospace"> حذف </button>
+
+                </td>
+
+            </tr>
+        </table>
+
+       
+    </div>
+</body>
+</html>

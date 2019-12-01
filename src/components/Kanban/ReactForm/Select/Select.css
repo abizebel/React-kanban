@@ -1,0 +1,56 @@
+
+/************************
+* SELECT
+************************/
+.r-select {
+    cursor: pointer;  
+}
+.r-select > input {
+    padding-right: 28px;
+}
+
+
+/* Bordered */
+.r-select.r-bordered > input {
+      padding-right: 40px;
+}
+
+/* Multi Select Checkbox*/
+.r-select  .r-checkbox.r-nospace .r-checkbox-fake {
+    margin-top: 3px;
+	padding-right: 16px
+
+}
+
+
+/* Animated arrow */
+.r-select .r-icon {
+    transition: .2s ease-in-out all;    
+     bottom:5px
+}
+.r-select.active > .r-icon {
+    transition: .4s ease all;
+    transition: .4s ease-in-out all;
+    transform: rotate(180deg);
+   
+} 
+
+
+/* RTL */
+
+.r-select.r-rtl > input,
+.r-rtl .r-select > input  {
+    padding-right: unset;
+    padding-left: 28px;
+}
+.r-select.r-bordered.r-rtl > input,
+.r-rtl .r-select.r-bordered > input  {
+    padding-left: 40px;
+}
+
+/* Multi Select Checkbox*/
+.r-select.r-rtl .r-checkbox.r-nospace .r-checkbox-fake ,
+.r-rtl .r-select .r-checkbox.r-nospace .r-checkbox-fake {
+    padding: 0;
+	margin-left:16px !important;
+}

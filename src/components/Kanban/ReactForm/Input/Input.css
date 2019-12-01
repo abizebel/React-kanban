@@ -1,0 +1,405 @@
+
+/**********************************************
+* INPUT
+***********************************************/
+/* Change the white to any color ;) */
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active  {
+    -webkit-box-shadow: 0 0 0 30px white inset !important;
+}
+
+
+.r-input {
+    direction: ltr;
+    position: relative;
+    margin-top:  calc(var(--space-around) * 1rem) ;
+    margin-bottom: calc(var(--space-around) * 1rem) ;
+}
+
+/* No Cursor */
+.r-input.r-noselect > input {
+    color: transparent;
+    text-shadow: 0 0 0 var(--text-color);
+    cursor: pointer
+}
+.r-input.r-noselect > input:focus {
+    outline: none;
+}
+  
+  
+
+
+/* Input */
+.r-input > input,
+.r-input > textarea {
+    background-color: #fff;
+    color:var(--text-color);
+    font-size:calc(var(--text-size) * 1em); 
+    border: none;
+    border-bottom: 1px solid var(--label-color);
+    border-radius: 0;
+    outline: none;
+    height: calc(var(--input-height) * 1.9rem) ;
+    box-sizing: border-box;
+    width: 100%;
+    font-family: inherit;
+	display: block;
+	width: 100%;
+	border: 0;
+    background: white no-repeat;
+	background-image: linear-gradient(to bottom, var(--focus-color),var(--focus-color)), linear-gradient(to bottom, silver, silver);
+	background-size: 0 1px, 100% 1px;
+	background-position: 50% 100%, 50% 100%;
+    transition: background-size 0.3s cubic-bezier(0.64, 0.09, 0.08, 1);
+
+}
+
+/* textarea */
+.r-input > textarea {
+    -webkit-margin-bottom : -10px;
+    resize: none !important;
+     height: calc(var(--input-height) * 2.6rem) ;
+    
+}
+
+
+
+/* Label */
+.r-input > label {
+    position:absolute;
+    top:calc(50% - 12px);
+
+    left: 0;
+    height: 16px;
+    cursor: text;
+    font-size: calc(var(--text-size) * 1em);
+    color: var(--text-color);
+    pointer-events: none;
+    transition: 300ms ease all;
+    -webkit-transition: 300ms ease all;
+    -moz-transition: 300ms ease all;
+    -ms-transition: 300ms ease all;
+    background:transparent
+}
+
+
+
+
+/* Line */
+.r-input.r-bordered > .r-line {
+    display: none
+}
+.r-input >input ~ .r-line,
+.r-input >textarea ~ .r-line {
+    position: absolute;
+	top: 100%;
+	left: 0;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height:1px;
+	border: none;
+	background:var( --focus-color);
+	will-change: transform, visibility;
+	transition: all 200ms ease-out;
+	transform: scaleX(0);
+	visibility: hidden;
+	
+}
+.r-input >textarea ~ .r-line {
+    top: calc(100% - 1px)
+}
+
+/* Icon */
+.r-input > .r-icon {
+    position: absolute;
+    top: calc(50% - 12px);
+    right: 0;  
+    width: 24px;
+    height: 24px;;
+    line-height: 24px;
+}
+
+.r-input > .r-icon svg {
+  width: 20px !important;
+  height: 20px !important;
+   padding-top: 2px;
+   padding-left: 2px;
+}
+
+/* Message */
+.r-input > .r-message {
+    font-size: calc(var(--label-size) * 1em);
+    position: absolute;
+    bottom:-20px;
+    left: 0;
+    width: 100%
+}
+
+
+/* Error & Success */
+.r-input.r-error > .r-message{
+    color : var(--danger-color);
+}
+.r-input.r-success > .r-icon  svg {
+    fill : var(--success-color) !important;
+    
+}
+.r-input.r-error > .r-icon  svg {
+    fill : var(--danger-color) !important;    
+}
+
+.r-input.r-error:not('r-rtl') > input,
+.r-input.r-errorr:not('r-rtl') > textarea ,
+.r-input.r-successr:not('r-rtl') > input,
+.r-input.r-successr:not('r-rtl') > textarea {
+    padding-right: 24px
+}
+.r-input.r-bordered.r-error > input,
+.r-input.r-bordered.r-error > textarea,
+.r-input.r-bordered.r-success > input,
+.r-input.r-bordered.r-success > textarea{
+    padding-right: 40px;
+}
+.r-input.r-error {
+
+}
+/* Has icon */
+.r-input.r-has-icon > .r-input-icon {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    font-size: 25px;
+    overflow: hidden;
+    top: calc(50% - 16px);
+    left: 0 ; 
+}
+
+.r-input.r-has-icon > .r-input-icon span {
+    position: relative;
+    top: -3px
+}
+.r-input.r-has-icon > .r-input-icon sapn{
+  font-size: 22px
+}
+.r-input.r-has-icon > .r-input-icon svg {
+    width: 25px;
+    color: var(--text-color) !important;
+    fill:  var(--text-color) ;
+}
+.r-input.r-has-icon > input,
+.r-input.r-has-icon > textarea{
+    padding-left: unset;
+    padding-left: 32px ;
+}
+.r-input.r-has-icon > label {
+   left: 32px
+}
+
+
+/* Bordered */
+.r-input.r-bordered > input,
+.r-input.r-bordered > textarea{
+    background-image: none;
+
+    padding-top: .3rem;/*Fix input is not exactly in center*/
+    height: calc(var(--input-height) * 3rem) ;
+}
+
+.r-input.r-bordered > .r-icon {
+    position: absolute;
+    top: calc(50% - 10px);
+    right: 8px;
+    
+}
+.r-input.r-bordered > input,
+.r-input.r-bordered > textarea {
+    border: 1px solid var(--label-color);
+    border-radius: 4px;
+    padding-right: 16px;
+    padding-left: 16px;
+}
+.r-input.r-bordered > label {
+    left: 16px;
+    top: calc(50% - 10px) 
+}
+
+/* Has icon & Bordered */
+.r-input.r-bordered.r-has-icon > .r-input-icon {
+    left: 8px
+}
+.r-input.r-bordered.r-has-icon > input,
+.r-input.r-bordered.r-has-icon > textarea{
+    padding-left: unset;
+    padding-left: 40px ;
+}
+.r-input.r-bordered.r-has-icon > label {
+   left: 40px
+}
+
+
+
+/* Disabled */
+.r-input.r-disabled > input,
+.r-input.r-disabled > textarea {
+    background-image: none;
+    border-bottom: 1px dashed var(--disabled-color) !important;
+}
+.r-input.r-has-icon.r-disabled > .r-input-icon ,
+.r-input.r-disabled > .r-icon {
+    opacity: .3
+}
+
+.r-input.r-bordered.r-disabled > input {
+    border: 1px dashed var(--disabled-color) !important;
+}
+.r-input.r-disabled > input ,
+.r-input.r-disabled > textarea {
+    color: var(--label-color);
+    cursor: not-allowed
+}
+
+
+
+
+/* Focus */
+.r-input > input:focus ,
+.r-input > textarea:focus {
+    	background-size: 100% 2px, 100% 2px;
+
+}
+.r-input > input:focus ~ label,
+.r-input > textarea:focus ~ label,
+.r-input.filled > label{
+    top: -18px;
+    color: var(--label-color);
+    font-size: calc(var(--label-size) * 1em);
+}
+.r-input.r-error > input:focus ~ label,
+.r-input.r-error > textarea:focus ~ label,
+.r-input.r-error.filled > label{
+    color : var(--danger-color);
+}
+
+.r-input.r-bordered > input:focus ~ label,
+.r-input.r-bordered > textarea:focus ~ label,
+.r-input.r-bordered.filled > label{
+    top: -8px;
+     color: var(--label-color);
+     font-size: calc(var(--label-size) * 1em);
+    background: #fff
+
+}
+.r-input.r-error.r-bordered > input:focus ~ label,
+.r-input.r-error.r-bordered > textarea:focus ~ label,
+.r-input.r-error.r-bordered.filled > label{
+    color : var(--danger-color);
+}
+.r-input.r-bordered > input:focus,
+.r-input.r-bordered > textarea:focus{
+    border: 2px solid var(--focus-color);  
+
+}
+
+.r-input >	input:focus ~ .r-line,
+.r-input >	textarea:focus ~ .r-line{
+	transform: scaleX(1);
+	visibility: visible;
+}
+.r-input.r-error >	input:focus ~ .r-line,
+.r-input.r-error >	textarea:focus ~ .r-line{
+	background: var(--danger-color) 
+}
+.r-input.r-error > input,
+.r-input.r-error > textarea{
+	border-color: var(--danger-color) 
+}
+
+/**********************************************
+* RTL INPUT
+***********************************************/
+.r-input.r-rtl.r-error > .r-message,
+.r-input.r-rtl.r-success > .r-message{
+    text-align: right;
+    direction:rtl;
+}
+
+.r-input.r-rtl > input,
+.r-input.r-rtl > textarea{
+    text-align: right ;
+    direction: rtl;
+}
+
+.r-input.r-rtl > .r-icon {
+    right:unset;
+    left: 0;
+    
+}
+.r-input.r-rtl > label {
+    left: unset;
+    right: 0
+}
+
+/* Has icon */
+.r-input.r-rtl.r-has-icon > .r-input-icon {
+    left: unset;
+    right: 0 ; 
+}
+.r-input.r-rtl.r-has-icon > input,
+.r-input.r-rtl.r-has-icon > textarea{
+    padding-left: unset;
+    padding-right: 32px ;
+}
+.r-input.r-rtl.r-has-icon > label {
+    left: unset;
+   right: 32px
+}
+
+
+/* Bordered */
+.r-input.r-rtl.r-bordered > .r-icon {
+    right:unset;
+    left: 8px;
+    
+}
+.r-input.r-rtl.r-bordered > input,
+.r-input.r-rtl.r-bordered > textarea {
+    padding-left: unset;
+    padding-right: 16px ;
+}
+.r-input.r-rtl.r-bordered > label {
+    left: unset;
+    right: 16px
+}
+
+/* Has icon & Bordered */
+.r-input.r-rtl.r-bordered.r-has-icon > .r-input-icon {
+    
+    left: unset;
+    right: 8px
+}
+.r-input.r-rtl.r-bordered.r-has-icon > input,
+.r-input.r-rtl.r-bordered.r-has-icon > textarea{
+    padding-right: unset;
+    padding-right: 40px ;
+}
+.r-input.r-rtl.r-bordered.r-has-icon > label {
+    left: unset;
+   right: 40px
+}
+
+
+.r-input.r-rtl.r-error > input,
+.r-input.r-rtl.r-error > textarea ,
+.r-input.r-rtl.r-success > input,
+.r-input.r-rtl.r-success > textarea {
+    padding-left: 24px
+}
+.r-input.r-rtl.r-bordered.r-error > input,
+.r-input.r-rtl.r-bordered.r-error > textarea,
+.r-input.r-rtl.r-bordered.r-success > input,
+.r-input.r-rtl.r-bordered.r-success > textarea{
+    padding-left: 40px;
+}

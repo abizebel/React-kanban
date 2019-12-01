@@ -1,0 +1,142 @@
+/************************
+* modal
+*************************/   
+/* Fix boday scrolling when popup is open */
+body.r-popup-open {
+  overflow-y: hidden;
+}
+.r-modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999999999;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,.6);
+  transition: all .7 ease
+}
+
+@media screen and (max-width:768px) {
+  .r-modal {
+    width: 100% !important;
+  }
+}
+
+
+.r-modal {
+ position: fixed;
+  right: 0;
+  top: 0;
+  width: 600px;
+  background: #fff;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  z-index: 9999999999;
+  box-shadow: 0 5px 11px 0 rgba(0,0,0,.18), 0 4px 15px 0 rgba(0,0,0,.15);
+}
+
+
+/* Header */
+.r-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom:1px solid #eee
+  
+}
+.r-modal-title {
+    display: flex;
+   padding:0 24px
+}
+.r-modal-buttons {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex-direction: row-reverse;
+  display: flex;
+  padding:12px 8px;
+
+} 
+.r-modal-buttons > li {
+  cursor: pointer;
+  margin-left: 8px
+ 
+}
+
+
+.r-modal-body {
+  display: flex;
+  flex-direction: row;
+  direction: ltr;
+  /* How to scroll fit content with flex */
+  flex-grow: 1;
+  /* for Firefox */
+  min-height: 0;
+
+  
+}
+
+/* Sidebar */
+.r-modal-sidebar {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 52px;
+  background: #f1f1f1;
+  display: flex;
+  flex-direction: column;
+  height : 100%
+}
+.r-modal-sidebar li {
+  cursor: pointer;
+  width: 100%;
+  text-align: center;
+  height: 48px;
+  line-height: 48px;
+}
+.r-modal-sidebar li:hover{
+  background: #eee
+}
+.r-modal-sidebar li:hover svg,
+.r-modal-sidebar li:hover span,
+.r-modal-sidebar li.active svg,
+.r-modal-sidebar li.active span{
+  color:  var(--focus-color);
+  fill: var(--focus-color)
+}
+
+.r-modal-sidebar li span,
+.r-modal-sidebar li svg {
+  font-size: 24px;
+	line-height: 32px;
+	vertical-align: text-top;
+	width: 24px;
+	height: 24px;
+
+}
+
+/* Content */
+.r-modal-content {
+  padding:0 32px;
+  width: 100%;
+  overflow-y: auto;
+}
+
+/* Rtl */
+.r-modal.r-rtl,
+.r-rtl .r-modal {
+  left: 0
+}
+.r-modal.r-rtl .r-modal-header,
+.r-rtl .r-modal .r-modal-header{
+  flex-direction: row-reverse
+}
+.r-modal.r-rtl .r-modal-buttons,
+.r-rtl .r-modal .r-modal-buttons {
+  flex-direction: row
+}
+.r-modal.r-rtl .r-modal-body,
+.r-rtl .r-modal .r-modal-body{
+  direction: rtl
+}

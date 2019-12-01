@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>React Form</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./fonts//material//css/materialdesignicons.css">
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/scripts.js"></script>
+
+</head>
+<body>
+
+            <div class="r-modal open r-rtl">
+                <div class="r-modal-header">
+                    <div class="r-modal-title">Login From</div> 
+                    <ul class="r-modal-buttons">
+                        <li>
+                            <button type="button" class="r-button r-ripple r-xs r-defualt r-nospace"> 
+                                <span class="mdi mdi-close"></span>
+                            </button>
+                        </li>
+
+                        <li>  <button type="button" class="r-button r-ripple r-xs r-defualt r-nospace"> 
+                            <svg viewBox="0 0 24 24">
+                                <path fill="#000000" d="M15,9H5V5H15M12,19A3,3 0 0,1 9,16A3,3 0 0,1 12,13A3,3 0 0,1 15,16A3,3 0 0,1 12,19M17,3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V7L17,3Z" />
+                            </svg></button>
+                        </li>
+                        <li>  <button type="button" class="r-button r-ripple r-xs r-defualt r-nospace"> 
+                            <svg viewBox="0 0 24 24">
+                                <path fill="#000000" d="M13.5,8H12V13L16.28,15.54L17,14.33L13.5,12.25V8M13,3A9,9 0 0,0 4,12H1L4.96,16.03L9,12H6A7,7 0 0,1 13,5A7,7 0 0,1 20,12A7,7 0 0,1 13,19C11.07,19 9.32,18.21 8.06,16.94L6.64,18.36C8.27,20 10.5,21 13,21A9,9 0 0,0 22,12A9,9 0 0,0 13,3" />
+                            </svg></button>
+                        </li>
+                        <li>  <button type="button" class="r-button r-ripple r-xs r-defualt r-nospace"> 
+                            <svg viewBox="0 0 24 24">
+                                <path fill="#000000" d="M3,15H1V3A2,2 0 0,1 3,1H19V3H3V15M12,23A1,1 0 0,1 11,22V19H7A2,2 0 0,1 5,17V7A2,2 0 0,1 7,5H21A2,2 0 0,1 23,7V17A2,2 0 0,1 21,19H16.9L13.2,22.71C13,22.89 12.76,23 12.5,23H12M9,9V11H19V9H9M9,13V15H17V13H9Z" />
+                            </svg></button>
+                        </li>
+             
+
+                        
+                    </ul>
+                </div>
+                <div class="r-modal-body">
+                    <ul class="r-modal-sidebar">
+                        <li class="active">
+                                <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 512.000000 512.000000"
+                            preserveAspectRatio="xMidYMid meet">
+                            <metadata>
+                            Created by potrace 1.15, written by Peter Selinger 2001-2017
+                            </metadata>
+                            <g transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)"
+                            stroke="none">
+                            <path d="M2280 4870 l0 -249 -37 -6 c-872 -137 -1548 -763 -1737 -1608 -14
+                            -63 -26 -126 -26 -141 l0 -26 -240 0 -240 0 0 -280 0 -280 235 0 235 0 4 -22
+                            c53 -280 104 -446 192 -624 308 -623 878 -1039 1577 -1149 l37 -6 0 -239 0
+                            -240 280 0 280 0 0 243 0 242 118 23 c716 139 1325 676 1556 1373 38 113 56
+                            189 92 377 l4 22 255 0 255 0 0 280 0 280 -260 0 -260 0 0 26 c0 15 -12 78
+                            -26 141 -86 384 -282 741 -559 1018 -286 286 -669 491 -1057 567 l-118 23 0
+                            253 0 252 -280 0 -280 0 0 -250z m0 -735 l0 -215 280 0 280 0 0 210 c0 116 3
+                            210 6 210 19 0 177 -45 265 -76 245 -85 516 -247 692 -413 171 -161 360 -468
+                            451 -730 34 -98 76 -247 76 -270 0 -8 -64 -11 -205 -11 l-205 0 0 -280 0 -280
+                            209 0 209 0 -15 -68 c-72 -325 -264 -694 -482 -925 -161 -171 -468 -360 -730
+                            -451 -88 -31 -246 -76 -265 -76 -3 0 -6 99 -6 220 l0 220 -280 0 -280 0 0
+                            -225 0 -225 -27 6 c-285 65 -501 153 -717 294 -231 151 -345 265 -495 495
+                            -127 194 -237 453 -284 667 l-15 68 229 0 229 0 0 280 0 280 -225 0 c-155 0
+                            -225 3 -225 11 0 23 42 172 76 270 91 262 280 569 451 730 171 162 443 325
+                            678 409 76 27 293 88 318 90 4 0 7 -97 7 -215z"/>
+                            <path d="M2405 3009 c-197 -68 -315 -236 -315 -449 0 -274 196 -470 470 -470
+                            274 0 470 196 470 470 0 215 -119 382 -319 450 -83 28 -223 27 -306 -1z"/>
+                            </g>
+                            </svg>
+
+                               
+                        </li>
+                        <li >
+                            <?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 24 24"><path d="M12,20C8.13,20 5,16.87 5,13C5,9.13 8.13,6 12,6C15.87,6 19,9.13 19,13C19,16.87 15.87,20 12,20M12,4C7.03,4 3,8.03 3,13C3,17.97 7.03,22 12,22C16.97,22 21,17.97 21,13C21,8.03 16.97,4 12,4M12.5,8H11V14L15.75,16.85L16.5,15.62L12.5,13.25V8M7.88,3.39L6.6,1.86L2,5.71L3.29,7.24L7.88,3.39M22,5.72L17.4,1.86L16.11,3.39L20.71,7.25L22,5.72Z" /></svg>
+                        </li>
+                        <li>
+                                <?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"  viewBox="0 0 24 24"><path d="M12,5.5A3.5,3.5 0 0,1 15.5,9A3.5,3.5 0 0,1 12,12.5A3.5,3.5 0 0,1 8.5,9A3.5,3.5 0 0,1 12,5.5M5,8C5.56,8 6.08,8.15 6.53,8.42C6.38,9.85 6.8,11.27 7.66,12.38C7.16,13.34 6.16,14 5,14A3,3 0 0,1 2,11A3,3 0 0,1 5,8M19,8A3,3 0 0,1 22,11A3,3 0 0,1 19,14C17.84,14 16.84,13.34 16.34,12.38C17.2,11.27 17.62,9.85 17.47,8.42C17.92,8.15 18.44,8 19,8M5.5,18.25C5.5,16.18 8.41,14.5 12,14.5C15.59,14.5 18.5,16.18 18.5,18.25V20H5.5V18.25M0,20V18.5C0,17.11 1.89,15.94 4.45,15.6C3.86,16.28 3.5,17.22 3.5,18.25V20H0M24,20H20.5V18.25C20.5,17.22 20.14,16.28 19.55,15.6C22.11,15.94 24,17.11 24,18.5V20Z" /></svg>
+                        </li>
+                        <li>
+                                <svg  viewBox="0 0 24 24"><path d="M10.59,13.41C11,13.8 11,14.44 10.59,14.83C10.2,15.22 9.56,15.22 9.17,14.83C7.22,12.88 7.22,9.71 9.17,7.76V7.76L12.71,4.22C14.66,2.27 17.83,2.27 19.78,4.22C21.73,6.17 21.73,9.34 19.78,11.29L18.29,12.78C18.3,11.96 18.17,11.14 17.89,10.36L18.36,9.88C19.54,8.71 19.54,6.81 18.36,5.64C17.19,4.46 15.29,4.46 14.12,5.64L10.59,9.17C9.41,10.34 9.41,12.24 10.59,13.41M13.41,9.17C13.8,8.78 14.44,8.78 14.83,9.17C16.78,11.12 16.78,14.29 14.83,16.24V16.24L11.29,19.78C9.34,21.73 6.17,21.73 4.22,19.78C2.27,17.83 2.27,14.66 4.22,12.71L5.71,11.22C5.7,12.04 5.83,12.86 6.11,13.65L5.64,14.12C4.46,15.29 4.46,17.19 5.64,18.36C6.81,19.54 8.71,19.54 9.88,18.36L13.41,14.83C14.59,13.66 14.59,11.76 13.41,10.59C13,10.2 13,9.56 13.41,9.17Z" /></svg>
+                        </li>
+
+                        <li>
+                                <svg  viewBox="0 0 24 24">
+                                        <path d="M12,16A3,3 0 0,1 9,13C9,11.88 9.61,10.9 10.5,10.39L20.21,4.77L14.68,14.35C14.18,15.33 13.17,16 12,16M12,3C13.81,3 15.5,3.5 16.97,4.32L14.87,5.53C14,5.19 13,5 12,5A8,8 0 0,0 4,13C4,15.21 4.89,17.21 6.34,18.65H6.35C6.74,19.04 6.74,19.67 6.35,20.06C5.96,20.45 5.32,20.45 4.93,20.07V20.07C3.12,18.26 2,15.76 2,13A10,10 0 0,1 12,3M22,13C22,15.76 20.88,18.26 19.07,20.07V20.07C18.68,20.45 18.05,20.45 17.66,20.06C17.27,19.67 17.27,19.04 17.66,18.65V18.65C19.11,17.2 20,15.21 20,13C20,12 19.81,11 19.46,10.1L20.67,8C21.5,9.5 22,11.18 22,13Z" />
+                                    </svg>
+                        </li>
+
+                        <li>
+                                <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+                                width="512.000000pt" height="512.000000pt" viewBox="0 0 512.000000 512.000000"
+                                preserveAspectRatio="xMidYMid meet">
+                               <metadata>
+                               Created by potrace 1.15, written by Peter Selinger 2001-2017
+                               </metadata>
+                               <g transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)"
+                                stroke="none">
+                               <path d="M2200 5091 c-146 -39 -202 -58 -299 -103 -127 -58 -271 -159 -388
+                               -272 -130 -125 -217 -239 -289 -379 -57 -111 -137 -336 -149 -420 -4 -26 -11
+                               -50 -16 -53 -12 -7 -12 -474 0 -474 5 0 12 -21 16 -47 10 -73 87 -298 135
+                               -396 51 -105 123 -211 213 -315 62 -70 185 -226 437 -551 52 -68 147 -189 210
+                               -269 64 -81 138 -176 165 -212 111 -146 289 -370 295 -370 3 0 73 86 156 191
+                               82 106 210 269 284 364 74 95 203 259 287 366 181 232 337 430 414 525 154
+                               191 276 451 304 650 4 27 12 54 17 60 16 21 4 469 -15 552 -65 289 -194 536
+                               -385 734 -197 205 -405 328 -692 410 -114 32 -117 32 -355 35 -235 2 -242 2
+                               -345 -26z m170 -521 l0 -260 160 0 160 0 0 261 c0 243 1 260 18 255 9 -2 54
+                               -14 99 -26 149 -40 392 -169 521 -278 139 -118 296 -395 357 -627 l23 -90
+                               -239 -3 -239 -2 0 -170 0 -170 239 -2 239 -3 -24 -90 c-48 -183 -113 -318
+                               -235 -491 -91 -127 -188 -205 -389 -313 -88 -46 -259 -109 -337 -124 l-33 -6
+                               -2 252 -3 252 -157 3 -158 3 0 -255 0 -255 -32 5 c-141 26 -384 136 -532 242
+                               -209 150 -370 421 -450 755 l-6 27 260 0 260 0 0 170 0 170 -260 0 -260 0 6
+                               28 c63 261 184 499 329 647 94 95 197 166 351 240 105 50 255 103 327 114 4 0
+                               7 -116 7 -259z"/>
+                               <path d="M2396 3966 c-89 -38 -145 -90 -191 -180 -33 -66 -40 -90 -43 -152 -9
+                               -169 100 -330 256 -380 81 -25 210 -16 280 20 74 38 124 86 163 158 33 61 34
+                               66 34 178 0 104 -3 121 -27 172 -33 71 -101 138 -175 175 -47 22 -73 28 -147
+                               30 -79 3 -99 0 -150 -21z"/>
+                               <path d="M577 754 c-312 -398 -570 -731 -573 -739 -5 -13 286 -15 2556 -15
+                               1624 0 2560 3 2558 10 -1 5 -272 338 -601 740 l-598 730 -356 0 c-196 0 -354
+                               -3 -350 -6 3 -3 -32 -58 -79 -122 l-85 -117 360 -3 361 -2 398 -488 399 -487
+                               -2010 -3 c-1106 -1 -2012 0 -2014 2 -2 2 168 222 378 490 l381 486 373 2 372
+                               3 -96 122 -96 123 -355 -1 -355 0 -568 -725z"/>
+                               </g>
+                               </svg>
+                               
+                        </li>
+                    </ul>
+                    <div class="r-modal-content">
+                            <div class="r-input r-has-icon r-rtl">
+                                    <input type="text" class="filled" />
+                                    <label>Username</label>
+                                    <span class="r-line"></span>
+                                    <span class="r-input-icon"><!--?xml version="1.0" encoding="UTF-8"?--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z"></path></svg></span>
+                            </div>
+                            <div class="r-input r-has-icon r-rtl">
+                                    <input type="text" class="filled" />
+                                    <label>Password</label>
+                                    <span class="r-line"></span>
+                                    <span class="r-input-icon"><!--?xml version="1.0" encoding="UTF-8"?--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z"></path></svg></span>
+                            </div>
+                            <div class="r-input r-has-icon r-rtl">
+                                <input type="text" class="filled" />
+                                <label>Username</label>
+                                <span class="r-line"></span>
+                                <span class="r-input-icon"><!--?xml version="1.0" encoding="UTF-8"?--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z"></path></svg></span>
+                        </div>
+                        <div class="r-input r-has-icon r-rtl">
+                                <input type="text" class="filled" />
+                                <label>Password</label>
+                                <span class="r-line"></span>
+                                <span class="r-input-icon"><!--?xml version="1.0" encoding="UTF-8"?--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z"></path></svg></span>
+                        </div>
+                        <div class="r-input r-has-icon r-rtl">
+                            <input type="text" class="filled" />
+                            <label>Username</label>
+                            <span class="r-line"></span>
+                            <span class="r-input-icon"><!--?xml version="1.0" encoding="UTF-8"?--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z"></path></svg></span>
+                    </div>
+                    <div class="r-input r-has-icon r-rtl">
+                            <input type="text" class="filled" />
+                            <label>Password</label>
+                            <span class="r-line"></span>
+                            <span class="r-input-icon"><!--?xml version="1.0" encoding="UTF-8"?--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z"></path></svg></span>
+                    </div>
+                
+                            <div class="r-select r-input r-has-icon r-rtl">
+                                <input type="text" class="filled" value="item 1">
+                                <label>Category</label>
+                                <span class="r-line"></span>
+                                <span class="r-input-icon"><!--?xml version="1.0" encoding="UTF-8"?--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z"></path></svg></span>
+                                <span class="r-icon"><!--?xml version="1.0" encoding="UTF-8"?--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M7,10L12,15L17,10H7Z"></path></svg></span>
+                            <div class="r-options">
+                                    <div class="r-options-search">
+                                        <input placeholder="search in list" type="text">
+                                    </div>
+                                    <div class="r-options-item"><span class="r-option-icon"><!--?xml version="1.0" encoding="UTF-8"?--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z"></path></svg></span> Abbas hosseini</div>
+                                    <div class="r-options-item"><span class="r-option-icon"><!--?xml version="1.0" encoding="UTF-8"?--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z"></path></svg></span> Mohammad feiz</div>
+                                    <div class="r-options-item"><span class="r-option-icon"><!--?xml version="1.0" encoding="UTF-8"?--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z"></path></svg></span> Reza ranjbar</div>
+                                    <div class="r-options-item"><span class="r-option-icon"><!--?xml version="1.0" encoding="UTF-8"?--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z"></path></svg></span> Amir abouei</div>
+                                </div>
+                            </div>
+                
+                            <div class="r-tag r-input filled r-rtl">
+                                <ul class="r-chips">
+                                    <li class="r-chips-item">ali<span class="r-tag-icon"><svg viewBox="0 0 24 24"><path fill="#000000" d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z"></path></svg></span></li>
+                                    <li class="r-chips-item">mohammad<span class="r-tag-icon"><svg viewBox="0 0 24 24"><path fill="#000000" d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z"></path></svg></span></li>
+                                    
+                                </ul>
+                                
+                                <input type="text">
+                                <label>Monthly tags</label>
+                                <span class="r-line"></span>
+                                <div class="r-options">
+                    
+                                    <div class="r-options-item"><span class="r-option-icon"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z"></path></svg></span> Abbas hosseini</div>
+                                    <div class="r-options-item"><span class="r-option-icon"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z"></path></svg></span> Mohammad feiz</div>
+                                    <div class="r-options-item"><span class="r-option-icon"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z"></path></svg></span> Reza ranjbar</div>
+                                    <div class="r-options-item"><span class="r-option-icon"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z"></path></svg></span> Amir abouei</div>
+                                </div>
+                            </div>
+                
+            
+                            <div class="r-input r-has-icon r-rtl">
+                                <input type="text" class="filled" />
+                                <label>Username</label>
+                                <span class="r-line"></span>
+                                <span class="r-input-icon"><!--?xml version="1.0" encoding="UTF-8"?--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z"></path></svg></span>
+                        </div>
+                        <div class="r-input r-has-icon">
+                                <input type="text" class="filled" />
+                                <label>Password</label>
+                                <span class="r-line"></span>
+                                <span class="r-input-icon"><!--?xml version="1.0" encoding="UTF-8"?--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z"></path></svg></span>
+                        </div>
+            
+            
+                        <div class="r-select r-input r-has-icon r-rtl">
+                            <input type="text" class="filled" value="item 1">
+                            <label>Category</label>
+                            <span class="r-line"></span>
+                            <span class="r-input-icon"><!--?xml version="1.0" encoding="UTF-8"?--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z"></path></svg></span>
+                            <span class="r-icon"><!--?xml version="1.0" encoding="UTF-8"?--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M7,10L12,15L17,10H7Z"></path></svg></span>
+                        <div class="r-options">
+                                <div class="r-options-search">
+                                    <input placeholder="search in list" type="text">
+                                </div>
+                                <div class="r-options-item"><span class="r-option-icon"><!--?xml version="1.0" encoding="UTF-8"?--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z"></path></svg></span> Abbas hosseini</div>
+                                <div class="r-options-item"><span class="r-option-icon"><!--?xml version="1.0" encoding="UTF-8"?--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z"></path></svg></span> Mohammad feiz</div>
+                                <div class="r-options-item"><span class="r-option-icon"><!--?xml version="1.0" encoding="UTF-8"?--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z"></path></svg></span> Reza ranjbar</div>
+                                <div class="r-options-item"><span class="r-option-icon"><!--?xml version="1.0" encoding="UTF-8"?--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z"></path></svg></span> Amir abouei</div>
+                            </div>
+                        </div>
+            
+                        <div class="r-tag r-input filled r-rtl">
+                            <ul class="r-chips">
+                                <li class="r-chips-item">ali<span class="r-tag-icon"><svg viewBox="0 0 24 24"><path fill="#000000" d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z"></path></svg></span></li>
+                                <li class="r-chips-item">mohammad<span class="r-tag-icon"><svg viewBox="0 0 24 24"><path fill="#000000" d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z"></path></svg></span></li>
+                                
+                            </ul>
+                            
+                            <input type="text">
+                            <label>Monthly tags</label>
+                            <span class="r-line"></span>
+                            <div class="r-options">
+                
+                                <div class="r-options-item"><span class="r-option-icon"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z"></path></svg></span> Abbas hosseini</div>
+                                <div class="r-options-item"><span class="r-option-icon"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z"></path></svg></span> Mohammad feiz</div>
+                                <div class="r-options-item"><span class="r-option-icon"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z"></path></svg></span> Reza ranjbar</div>
+                                <div class="r-options-item"><span class="r-option-icon"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z"></path></svg></span> Amir abouei</div>
+                            </div>
+                        </div>
+            
+                    </div><!-- /.r-modal-content -->
+                </div><!-- /.r-modal-body -->
+          
+            </div><!-- /.r-modal -->
+
+          
+ 
+
+</body>
+</html>

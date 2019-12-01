@@ -1,0 +1,165 @@
+.r-kanban {
+    font-size: 1em;
+    display:flex;
+    user-select: none;
+}
+
+.r-board-header {
+    margin-bottom: 40px;
+}
+.r-board-footer  {
+    position: absolute;
+    bottom: 0;
+    left: 16px;
+
+}
+.r-board-list {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 60px;
+    min-height: 70px;
+}
+
+
+
+.r-board {
+  padding-bottom: 24px;
+  position: relative;
+  background: #F6F7F8;
+  width: 400px;
+  height: 100%;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  padding: 16px;
+  box-shadow: 0 1px 4px 0 rgba(0,0,0,0.2);
+  margin: 16px 8px;
+ /* height: 600px;
+  overflow-y: auto;
+  overflow-x:hidden;*/
+}
+
+.r-board-add-cart {
+    font-size: .9em;
+    line-height: 24px;
+    width: 100%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: inline-flex;
+    flex-direction: row;
+    color: #bbb;
+    cursor: pointer;
+}
+.r-board-add-cart svg,
+.r-board-add-cart span{
+    width: 24px;
+    fill :#bbb;
+    color: #bbb;
+    
+}
+
+.r-board-title ,
+.r-board-subtitle {
+  line-height: 24px;
+  width: 100%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+   display: inline-flex;
+
+  
+}
+.r-board-title span,
+.r-board-title svg,
+.r-board-subtitle span,
+.r-board-subtitle svg{
+  width: 24px ;
+  height: 24px ;
+  padding:0 5px
+}
+
+.r-board-subtitle {
+    font-size: .8em;
+}
+.r-board-actions {
+  width: 24px;
+  fill: #bbb;
+  position: absolute;
+  top: 16px;
+  right : 16px;
+}
+
+/****************
+*  Card 
+*****************/
+.r-card {
+  font-size: .9em;
+  border: 1px solid #CBCBCB;
+  padding: 12px;
+  border-radius: 3px;
+  margin-bottom: 8px;
+  background: #fff;
+  height: 24px;
+  display: flex;
+  justify-content: space-between
+
+  
+}
+.r-card-title {
+    width: calc(100% - 32px);
+    overflow:hidden; 
+    white-space:nowrap; 
+    text-overflow: ellipsis;
+}
+.r-card .r-card-title {
+    width: 100%;
+}
+.r-card.edit {
+    display: block;
+    justify-content: unset
+
+}
+
+.r-card-close {
+    cursor: pointer !important;
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    text-align: center;
+    opacity: .2;
+}
+.r-card:hover .r-card-close {
+    opacity: 1 ;
+}
+.r-card-close span,
+.r-card-close svg{
+    width: 20px;
+}
+.r-card .r-input {
+    margin: 0 ;
+    position: relative;
+    bottom: 5px;
+}
+
+/* Rtl */
+.r-rtl .r-card {
+    text-align: right;
+    direction: rtl;
+}
+
+.r-rtl .r-board-actions  {
+  left: 16px
+}
+
+.r-rtl .r-board-header {
+  direction: rtl
+}
+
+.r-rtl .r-board-footer  {
+    left: unset;
+    right: 16px;
+}
+
+.r-rtl .r-board-add-cart{
+    flex-direction: row-reverse;
+}

@@ -1,0 +1,90 @@
+/**********************
+* CHIPS
+***********************/
+.r-chips{
+    padding: 0;
+    margin: 0;
+    padding: calc(var(--input-height) * .8rem) 0px 0 0px;
+    -webkit-user-select: none; /* Safari 3.1+ */
+    -moz-user-select: none; /* Firefox 2+ */ /* IE 10+ */
+    user-select: none; /* Standard syntax */  
+}
+.r-chips-item > img {
+    float: left;
+    margin: 0 8px 0 -12px;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;  
+}
+.r-chips-item{
+   display: inline-block;
+   height: 30px;
+   color: var(--tag-text-color);
+   line-height: 30px;
+   padding: 0 11px;
+   border-radius: 16px;
+    margin-bottom: 5px;
+   background-color:var(--tag-bg-color);
+   margin-right: 5px;
+   font-size: calc(var(--tag-size) * 1em);
+
+}
+.r-chips-item >.r-tag-icon {
+    position: relative;
+}
+.r-chips-item >.r-tag-icon >svg{
+    width: 13px;
+    cursor: pointer;
+    float: right;
+    font-size: 16px;
+    line-height: 32px;
+    padding:9px 0 0 10px;
+}
+/* Bordered */
+.r-bordered .r-chips {
+    padding: calc(var(--input-height) * .4rem) 16px 0 16px;
+}
+/* Disabled */
+.r-disabled .r-chips-item > img {
+     opacity: .4
+ }
+.r-bordered.r-disabled .r-chips-item {
+     background: #f1f1f1
+ }
+.r-disabled .r-chips-item ,
+.r-disabled .r-chips-item .r-tag-icon svg,
+.r-bordered.r-disabled .r-chips-item ,
+.r-bordered.r-disabled .r-chips-item .r-tag-icon svg{
+     color: var(--label-color);
+     fill: var(--label-color);
+}
+
+/* RTL */
+
+ .r-tag.r-rtl .r-chips-item >.r-tag-icon >svg,
+ .r-rtl .r-tag .r-chips-item >.r-tag-icon >svg {
+     float: unset;
+     float: left;
+     line-height: 32px;
+     padding:9px 10px 0 0;    
+ }
+ .r-tag.r-rtl .r-chips,
+ .r-rtl .r-tag .r-chips {
+     text-align: right;
+     direction: rtl;
+ }
+ .r-tag.r-rtl .r-chips-item > img,
+ .r-rtl .r-tag .r-chips-item > img  {
+     float: none;
+     float: right;
+     margin: 0 -12px 0 8px;
+ }
+ .r-tag.r-rtl .r-chips-item,
+ .r-rtl .r-tag .r-chips-item  {
+     text-align: right;
+     direction: rtl;
+     margin-right: unset;
+     margin-left: 5px;
+ 
+ 
+ }

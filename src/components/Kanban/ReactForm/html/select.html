@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>React Form</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/scripts.js"></script>
+
+</head>
+<body>
+
+    <div style="width:400px;padding:40px;border:1px solid #ddd; margin:50px;float: left; box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);">
+        <h2 style="padding-top:30px;text-align: center">LTR</h2>
+
+        <div class="r-select r-input  r-bordered r-has-icon">
+            <input type="text" class="filled" value="item 1" />
+            <label>Last Name</label>
+            
+            <span class="r-input-icon"><?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z" /></svg></span>
+            <span class="r-icon"><?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M7,10L12,15L17,10H7Z" /></svg></span>
+            <div class="r-options">
+                <div class="r-options-search">
+                    <input  placeholder="search in list" type="text" />
+                </div>
+                <div class="r-options-item"><span class="r-option-icon"><?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z" /></svg></span> Abbas hosseini</div>
+                <div class="r-options-item"><span class="r-option-icon"><?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z" /></svg></span> Mohammad feiz</div>
+                <div class="r-options-item"><span class="r-option-icon"><?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z" /></svg></span> Reza ranjbar</div>
+                <div class="r-options-item"><span class="r-option-icon"><?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z" /></svg></span> Amir abouei</div>
+            </div>
+        </div>
+
+        <div class="r-select r-input  r-bordered r-disabled">
+            <input type="text" class="filled" value="item 1" disabled/>
+            <label>Last Name</label>
+            
+            <span class="r-icon"><?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M7,10L12,15L17,10H7Z" /></svg></span>
+            <div class="r-options">
+                <div class="r-options-search">
+                    <input  placeholder="search in list" type="text" />
+                </div>
+                <div class="r-options-item">Abbas hosseini</div>
+                <div class="r-options-item">Mohammad feiz</div>
+                <div class="r-options-item">Reza ranjbar</div>
+                <div class="r-options-item">Amir abouei</div>
+            </div>
+        </div>
+
+        <div class="r-select r-input  r-bordered r-error">
+            <input type="text" class="filled" value="item 1" />
+            <label>Last Name</label>
+            
+            <span class="r-icon"><?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M7,10L12,15L17,10H7Z" /></svg></span>
+            <span class="r-message">this field has a error</span>  
+            <div class="r-options">
+                <div class="r-options-search">
+                    <input placeholder="search in list" type="text" />
+                </div>
+                <div class="r-options-item">Abbas hosseini</div>
+                <div class="r-options-item">Mohammad feiz</div>
+                <div class="r-options-item">Reza ranjbar</div>
+                <div class="r-options-item">Amir abouei</div>
+            </div>
+        </div>
+        
+        <h2 style="padding-top:30px;text-align: center">راست چین</h2>
+
+        <div class="r-select r-input  r-rtl r-bordered r-has-icon">
+            <input type="text" class="filled" value="نام خانوادگی" />
+            <label>نام خانوادگی</label>
+            
+            <span class="r-input-icon"><?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z" /></svg></span>
+            <span class="r-icon"><?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M7,10L12,15L17,10H7Z" /></svg></span>
+            <div class="r-options">
+                <div class="r-options-search">
+                    <input  placeholder="search in list" type="text" />
+                </div>
+                <div class="r-options-item"><span class="r-option-icon"><?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z" /></svg></span> Abbas hosseini</div>
+                <div class="r-options-item"><span class="r-option-icon"><?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z" /></svg></span> Mohammad feiz</div>
+                <div class="r-options-item"><span class="r-option-icon"><?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z" /></svg></span> Reza ranjbar</div>
+                <div class="r-options-item"><span class="r-option-icon"><?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z" /></svg></span> Amir abouei</div>
+            </div>
+        </div>
+        <div class="r-select r-input  r-rtl r-bordered">
+            <input type="text" class="filled" value="نام خانوادگی" />
+            <label>نام خانوادگی</label>
+            
+            <span class="r-icon"><?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M7,10L12,15L17,10H7Z" /></svg></span>
+            <div class="r-options">
+                <div class="r-options-search">
+                    <input  placeholder="search in list" type="text" />
+                </div>
+                <div class="r-options-item">Abbas hosseini</div>
+                <div class="r-options-item">Mohammad feiz</div>
+                <div class="r-options-item">Reza ranjbar</div>
+                <div class="r-options-item">Amir abouei</div>
+            </div>
+        </div>
+
+        <div class="r-select r-input  r-rtl r-bordered r-disabled">
+            <input type="text" class="filled" value="نام خانوادگی" disabled/>
+            <label>نام خانوادگی</label>
+            
+            <span class="r-icon"><?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M7,10L12,15L17,10H7Z" /></svg></span>
+            <div class="r-options">
+                <div class="r-options-search">
+                    <input  placeholder="search in list" type="text" />
+                </div>
+                <div class="r-options-item">Abbas hosseini</div>
+                <div class="r-options-item">Mohammad feiz</div>
+                <div class="r-options-item">Reza ranjbar</div>
+                <div class="r-options-item">Amir abouei</div>
+            </div>
+        </div>
+
+        <div class="r-select r-input  r-rtl r-bordered r-error">
+            <input type="text" class="filled" value="نام خانوادگی" />
+            <label>نام خانوادگی</label>
+            
+            <span class="r-icon"><?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M7,10L12,15L17,10H7Z" /></svg></span>
+            <span class="r-message">ورود نام خانوادگی الزامیست</span>  
+            <div class="r-options">
+                <div class="r-options-search">
+                    <input placeholder="search in list" type="text" />
+                </div>
+                <div class="r-options-item">Abbas hosseini</div>
+                <div class="r-options-item">Mohammad feiz</div>
+                <div class="r-options-item">Reza ranjbar</div>
+                <div class="r-options-item">Amir abouei</div>
+            </div>
+        </div>
+    </div>
+
+    <div style="width:400px;padding:40px;border:1px solid #ddd; margin:50px;float: left; box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);">
+        <h2 style="padding-top:30px;text-align: center">LTR</h2>
+        <div class="r-select r-input  r-has-icon">
+            <input type="text" class="filled" value="item 1" />
+            <label>Last Name</label>
+            
+            <span class="r-input-icon"><?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z" /></svg></span>
+            <span class="r-icon"><?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M7,10L12,15L17,10H7Z" /></svg></span>
+        <div class="r-options">
+                <div class="r-options-search">
+                    <input  placeholder="search in list" type="text" />
+                </div>
+                <div class="r-options-item"><span class="r-option-icon"><?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z" /></svg></span> Abbas hosseini</div>
+                <div class="r-options-item"><span class="r-option-icon"><?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z" /></svg></span> Mohammad feiz</div>
+                <div class="r-options-item"><span class="r-option-icon"><?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z" /></svg></span> Reza ranjbar</div>
+                <div class="r-options-item"><span class="r-option-icon"><?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z" /></svg></span> Amir abouei</div>
+            </div>
+        </div>
+        <div class="r-select r-input  ">
+            <input type="text" class="filled" value="item 1" />
+            <label>Last Name</label>
+            
+            <span class="r-icon"><?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M7,10L12,15L17,10H7Z" /></svg></span>
+            <div class="r-options">
+                <div class="r-options-search">
+                    <input  placeholder="search in list" type="text" />
+                </div>
+                <div class="r-options-item">Aعباس</div>
+                <div class="r-options-item">Mohammad feiz</div>
+                <div class="r-options-item">Reza ranjbar</div>
+                <div class="r-options-item">Amir abouei</div>
+            </div>
+        </div>
+
+        <div class="r-select r-input   r-disabled">
+            <input type="text" class="filled" value="item 1" disabled />
+            <label>Last Name</label>
+            
+            <span class="r-icon"><?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M7,10L12,15L17,10H7Z" /></svg></span>
+            <div class="r-options">
+                <div class="r-options-search">
+                    <input  placeholder="search in list" type="text" />
+                </div>
+                <div class="r-options-item">Abbas hosseini</div>
+                <div class="r-options-item">Mohammad feiz</div>
+                <div class="r-options-item">Reza ranjbar</div>
+                <div class="r-options-item">Amir abouei</div>
+            </div>
+        </div>
+
+        <div class="r-select r-input   r-error">
+            <input type="text" class="filled" value="item 1" />
+            <label>Last Name</label>
+            
+            <span class="r-icon"><?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M7,10L12,15L17,10H7Z" /></svg></span>
+            <span class="r-message">this field has a error</span>  
+            <div class="r-options">
+                <div class="r-options-search">
+                    <input placeholder="search in list" type="text" />
+                </div>
+                <div class="r-options-item">Abbas hosseini</div>
+                <div class="r-options-item">Mohammad feiz</div>
+                <div class="r-options-item">Reza ranjbar</div>
+                <div class="r-options-item">Amir abouei</div>
+            </div>
+        </div>
+
+        <h2 style="padding-top:30px;text-align: center">راست چین</h2>
+        <div class="r-select r-input  r-rtl r-has-icon">
+            <input type="text" class="filled" value="نام خانوادگی" />
+            <label>نام خانوادگی</label>
+            
+            <span class="r-input-icon"><?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z" /></svg></span>
+            <span class="r-icon"><?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M7,10L12,15L17,10H7Z" /></svg></span>
+            <div class="r-options">
+                <div class="r-options-search">
+                    <input  placeholder="search in list" type="text" />
+                </div>
+                <div class="r-options-item"><span class="r-option-icon"><?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z" /></svg></span> عباس حسینی</div>
+                <div class="r-options-item"><span class="r-option-icon"><?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z" /></svg></span> محمد فیض</div>
+                <div class="r-options-item"><span class="r-option-icon"><?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z" /></svg></span> رضا رنجبر</div>
+                <div class="r-options-item"><span class="r-option-icon"><?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z" /></svg></span> امیر ابویی</div>
+            </div>
+        </div>
+        <div class="r-select r-input  r-rtl ">
+            <input type="text" class="filled" value="نام خانوادگی" />
+            <label>نام خانوادگی</label>
+            
+            <span class="r-icon"><?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M7,10L12,15L17,10H7Z" /></svg></span>
+            <div class="r-options">
+                <div class="r-options-search">
+                    <input  placeholder="search in list" type="text" />
+                </div>
+                <div class="r-options-item">عباس حسینی</div>
+                <div class="r-options-item">محمد فیضz</div>
+                <div class="r-options-item">رضا رنجبر</div>
+                <div class="r-options-item">امیر ابویی</div>
+            </div>
+        </div>
+
+        <div class="r-select r-input  r-rtl  r-disabled">
+            <input type="text" class="filled" value="نام خانوادگی" disabled/>
+            <label>نام خانوادگی</label>
+            
+            <span class="r-icon"><?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M7,10L12,15L17,10H7Z" /></svg></span>
+            <div class="r-options">
+                <div class="r-options-search">
+                    <input  placeholder="search in list" type="text" />
+                </div>
+                <div class="r-options-item">عباس حسینی</div>
+                <div class="r-options-item">محمد فیضz</div>
+                <div class="r-options-item">رضا رنجبر</div>
+                <div class="r-options-item">امیر ابویی</div>
+            </div>
+        </div>
+
+        <div class="r-select r-input  r-rtl  r-error">
+            <input type="text" class="filled" value="نام خانوادگی" />
+            <label>نام خانوادگی</label>
+            
+            <span class="r-icon"><?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M7,10L12,15L17,10H7Z" /></svg></span>
+            <span class="r-message">ورود نام خانوادگی الزامیست</span>  
+            <div class="r-options">
+                <div class="r-options-search">
+                    <input placeholder="search in list" type="text" />
+                </div>
+                <div class="r-options-item">عباس حسینی</div>
+                <div class="r-options-item">محمد فیضz</div>
+                <div class="r-options-item">رضا رنجبر</div>
+                <div class="r-options-item">امیر ابویی</div>
+            </div>
+        </div>
+        
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,87 @@
+/************************
+* TOGGLE
+************************/
+.r-toggle {
+    margin-top:  calc(var(--space-around) * 1rem) ;
+    margin-bottom: calc(var(--space-around) * 1rem) ;
+}
+.r-toggle >input{
+	display: none
+}
+.r-toggle-handler {
+	position: relative;
+	display: block;
+	height: 20px;
+	width: 44px;
+	background: #898989;
+	border-radius: 100px;
+	cursor: pointer;
+	transition: all 0.3s ease;
+}
+/* Handler */
+.r-toggle-handler:after {
+	position: absolute;
+	left: -2px;
+	top: -3px;
+	display: block;
+	width: 26px;
+	height: 26px;
+	border-radius: 100px;
+	background: #fff;
+    box-shadow: 0px 0px 9px 1px rgba(0, 0, 0, 0.05);
+	content: '';
+	transition: all 0.3s ease;
+}
+
+
+.r-toggle-handler:active:after {
+	transform: scale(1.15, 0.85);
+}
+/* Sizes */
+.r-toggle.r-xs .r-toggle-handler {
+	height: 16px;
+	width: 32px
+}
+
+.r-toggle.r-xs .r-toggle-handler:after {
+	width: 20px;
+	 height: 20px;
+	 top: -2px;
+}
+.r-toggle.r-xs > input:checked~label:after {
+	left: 16px
+}
+.r-toggle.r-lg .r-toggle-handler {
+	height: 24px;
+	width: 48px
+}
+
+.r-toggle.r-lg .r-toggle-handler:after {
+	width: 28px;
+	 height: 28px;
+	 top: -2px;
+}
+.r-toggle.r-lg > input:checked~label:after {
+	left: 24px
+}
+
+.r-toggle > input:checked~label {
+	background: var(--light-focus-color);
+}
+
+.r-toggle > input:checked~label:after {
+	left: 20px;
+	background: var(--focus-color);
+}
+
+.r-toggle > input:disabled~label {
+	background: #d5d5d5;
+	pointer-events: none;
+}
+
+.r-toggle > input:disabled~label:after {
+	background: #bcbdbc;
+}
+
+
+

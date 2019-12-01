@@ -1,0 +1,29 @@
+.r-tab{}
+.r-tab-list{
+    border-bottom: 1px solid var(--label-color);
+}
+.r-tab-list  {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+.r-tab-list li.active {
+    border-bottom: 2px solid var(--focus-color)
+}
+.r-tab-content{
+    padding:16px 0
+}
+
+/* Rtl */
+.r-tab.r-rtl .r-tab-list,
+.r-rtl .r-tab .r-tab-list {
+    justify-content: flex-start;
+    flex-direction: row-reverse;
+}
+.r-tab.r-rtl .r-tab-content,
+.r-rtl .r-tab .r-tab-content  {
+    direction: rtl;
+}

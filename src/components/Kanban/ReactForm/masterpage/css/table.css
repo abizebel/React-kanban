@@ -1,0 +1,27 @@
+table{
+    width:100%;
+    border:1px solid #aaa;
+    border-collapse:collapse;
+    font-size:12px;
+    direction:ltr;
+    
+}
+table th{
+    text-align:center;
+    background: #f8f8f8;  
+    padding:0 6px 
+}
+table td{
+    text-align:center;
+   font-weight: normal
+}
+table.rtl{
+ direction:rtl;
+}
+
+
+table td,table th{
+    border-bottom:1px solid #eee;
+    height:28px;
+
+}

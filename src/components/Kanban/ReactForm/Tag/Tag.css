@@ -1,0 +1,74 @@
+/************************
+* TAG
+*************************/
+.r-tag {
+	margin-top:  calc(var(--space-around) * 1rem) ;
+	margin-bottom: calc(var(--space-around) * 1rem) ;
+	  position: relative
+  }
+  .r-tag.r  .r-options {
+  }
+  
+  .r-tag > input:focus ~ label,
+  .r-tag.filled > label {
+	  top: unset !important;;
+	  bottom:calc(100% + 2px)  !important;
+  
+  }
+  .r-tag > label {
+	  top: unset;
+	  bottom:calc(50% - calc(var(--input-height) * .8rem) + 4px)
+
+  }
+  
+  /* Bordered */
+  .r-tag.r-bordered {
+	  border: 1px solid var(--label-color);
+	  border-top-right-radius: 4px;
+	  border-top-left-radius: 4px;
+	  border-bottom: 0
+  }
+  .r-tag.r-bordered input {
+	  border-top: 0;
+	  border-left: 0;
+	  border-right: 0;
+	  border-radius: 0
+  }
+  .r-tag.r-bordered .r-line {
+	  display: block;
+  }
+  
+  /* Disabled */
+  .r-tag.r-disabled.r-bordered input{
+	  border-left: 0 !important;
+	  border-top: 0 !important;
+	  border-right: 0 !important;
+  }
+  .r-tag.r-disabled .r-tag-icon {
+	  opacity: .3;
+  }
+  
+  .r-tag.r-bordered.r-disabled {
+	  border: 1px dashed var(--disabled-color) !important;
+  }
+  
+  
+  .r-tag.r-disabled>input {
+	  color: var(--label-color)
+  }
+  
+  /* Error */
+  
+  .r-tag.r-error.r-bordered {
+	  border-color: var(--danger-color)
+  }
+  /* Focus */
+  .r-tag.r-bordered input:focus {
+	  border: 0;
+	  border-bottom: 1px solid var(--label-color)
+  }
+  
+  /* Rtl */
+  
+  
+  
