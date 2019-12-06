@@ -17,7 +17,18 @@ class Card extends Component {
     };
     
     state = {
-        edit : false
+        edit : false,
+        textareaValue : this.props.title
+    }
+
+
+
+    static getDerivedStateFromProps (props, state) {
+        if (props.title !== state.title ) {
+            return {
+                textareaValue : props.title
+            }
+        }
     }
 
 
@@ -60,8 +71,6 @@ class Card extends Component {
                 index={index}>
                 {(provided, snapshot) => (
                     <div
-                        onDoubleClick={this.startEdit}
-                        onBlur={this.endEdit}
                         className={`r-card ${edit && 'edit'}`}
                         ref={provided.innerRef}
                         {...provided.draggableProps}
@@ -71,21 +80,21 @@ class Card extends Component {
                             provided.draggableProps.style
                         )}>
                         <div className="r-card-title">
+
                             {/* {   edit && 
-                                <Input
-                                    rtl = {rtl}
-                                    value = {title}
-                                    autoFocus={true}
-                                    change = {this.edit}
-                                    onBlur = {this.endEdit}
-                                    onFocus = {this.startEdit}
-                                    onKeyUp={this.keyUp}
-                                />
+                                <textarea 
+                                    ref={this.textareaDom}
+                                    autoFocus
+                                    value={title}
+                                    onChange={this.changeTextarea} 
+                                    value={title}
+                                >
+                                </textarea>
                             } */}
                             {!edit && title}
                         </div>
                         <div className="r-card-actions" >
-                            <div className="r-card-edit" onClick={this.remove}>{icons.edit}</div>
+                            <div className="r-card-edit" onClick={this.startEdit}>{icons.edit}</div>
                             <div className="r-card-close" onClick={this.remove}>{icons.close}</div>
                         </div>
 

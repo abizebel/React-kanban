@@ -54,6 +54,7 @@ class Board extends Component {
         this.setState({isAddMode : !this.state.isAddMode})
     }
 
+
     setScrollDown (){
         const h = this.scrollbarDom.current.getScrollHeight()
         setTimeout(()=>{
@@ -65,6 +66,9 @@ class Board extends Component {
     keyUp (index, e) {
         if (e.keyCode === 13) {
             this.addItem(index)
+        }
+        else if (e.keyCode === 27) {
+            this.toggleAddMode()
         }
     }
 

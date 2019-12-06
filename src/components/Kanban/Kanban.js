@@ -25,7 +25,7 @@ class Kanban extends Component {
     }
 
     addBoardItem  (val, i)  {
-        if (val.length === 0) return ;
+        if (val.trim().length === 0) return ;
         let boards = Array.from(this.state.boards);
         boards[i].items.push({ title : val});
         this.setState(boards)
