@@ -5,7 +5,7 @@ import {move, reorder} from './Functions';
 import Board from './Board';
 import './Kanban.css';
 import KanbanContext from './KanbanContext';
-
+import './ReactForm/css/Button.css'
 
 class Kanban extends Component {
     static getDerivedStatesFromProps (props , state) {
@@ -24,9 +24,10 @@ class Kanban extends Component {
 
     }
 
-    addBoardItem  (i)  {
+    addBoardItem  (val, i)  {
+        if (val.length === 0) return ;
         let boards = Array.from(this.state.boards);
-        boards[i].items.push({ title : ''});
+        boards[i].items.push({ title : val});
         this.setState(boards)
     }
     updateBoardItem (val, parentIndex, index){
@@ -101,6 +102,8 @@ class Kanban extends Component {
 
     getListStyle =  (isDragging, draggableStyle) => ({
         userSelect: 'none',
+       
+
         ...draggableStyle,
    
     });

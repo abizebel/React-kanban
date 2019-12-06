@@ -8,11 +8,13 @@ import icons from './ReactForm/icons';
 class Card extends Component {
     static contextType = KanbanContext;
 
-    getItemStyle =  (isDragging, draggableStyle) => ({
-        userSelect: 'none',
-        border:`1px solid ${isDragging ? '#2E5AE8' : '#CBCBCB'}` ,
-        ...draggableStyle
-    });
+    getCardStyle =  (isDragging, draggableStyle) => {  
+        return  {
+            userSelect: 'none',
+          //  border:`1px solid ${isDragging ? '#2E5AE8' : '#CBCBCB'}` ,
+            ...draggableStyle,
+        }
+    };
     
     state = {
         edit : false
@@ -64,12 +66,12 @@ class Card extends Component {
                         ref={provided.innerRef}
                         {...provided.draggableProps}
                         {...provided.dragHandleProps}
-                        style={this.getItemStyle(
+                        style={this.getCardStyle(
                             snapshot.isDragging,
                             provided.draggableProps.style
                         )}>
                         <div className="r-card-title">
-                            {   edit && 
+                            {/* {   edit && 
                                 <Input
                                     rtl = {rtl}
                                     value = {title}
@@ -79,10 +81,14 @@ class Card extends Component {
                                     onFocus = {this.startEdit}
                                     onKeyUp={this.keyUp}
                                 />
-                            }
+                            } */}
                             {!edit && title}
                         </div>
-                        {!edit && <div className="r-card-close" onClick={this.remove}>{icons.close}</div>}
+                        <div className="r-card-actions" >
+                            <div className="r-card-edit" onClick={this.remove}>{icons.edit}</div>
+                            <div className="r-card-close" onClick={this.remove}>{icons.close}</div>
+                        </div>
+
                     </div>
 
                 )}
