@@ -28,10 +28,13 @@ const data = [
   {
     title : 'افزایش فروش پوینتر 3',
     subtitle : 'جذب 10 نماینده از مشاوران',
-    items : [
-
-    ] 
- }
+    items : [ ] 
+  },
+  {
+    title : 'افزایش فروش پوینتر 3',
+    subtitle : 'جذب 10 نماینده از مشاوران',
+    items : [ ] 
+  }
 ]
 
 
@@ -39,6 +42,8 @@ const data = [
 function App() {
   return (
     <Kanban
+      width={'100%'}
+      height={600}
       rtl={true}
       data = {data}
       change={(val)=>{

@@ -1,11 +1,9 @@
 import React, {Component} from 'react';
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
-import Card from './Card';
 import {move, reorder} from './Functions';
 import Board from './Board';
-import './Kanban.css';
 import KanbanContext from './KanbanContext';
-import './ReactForm/css/Button.css'
+import './Kanban.css';
 
 class Kanban extends Component {
     static getDerivedStatesFromProps (props , state) {
@@ -100,16 +98,19 @@ class Kanban extends Component {
         
     }
 
-    getListStyle =  (isDragging, draggableStyle) => ({
-        userSelect: 'none',
-       
+    getListStyle =  (isDragging, draggableStyle) => {
+        const {width, height} = this.props
+        return {
+            width,
+            height,
+            userSelect: 'none',
+            ...draggableStyle,
+        }
+    };
 
-        ...draggableStyle,
-   
-    });
 
     render() {
-        const {rtl} = this.props;
+        const {rtl, height} = this.props;
         const {boards} = this.state;
         const rtlClass = rtl ? 'r-rtl' : '';
         const contextValue = {
@@ -125,7 +126,7 @@ class Kanban extends Component {
                 <DragDropContext onDragEnd={this.onDragEnd}>
                     <Droppable direction={'horizontal'} droppableId="droppable" type="droppableItem">
                         {(provided, snapshot) => (
-                            <div className={`r-kanban ${rtlClass}`}
+                            <div  className={`r-kanban ${rtlClass}`}
                             ref={provided.innerRef}
                             style={this.getListStyle(snapshot.isDraggingOver)}
                             >
@@ -133,6 +134,7 @@ class Kanban extends Component {
                                     boards.map((o, i) =>{
                                         return (
                                             <Board 
+                                                height={height}
                                                 rtl={rtl}
                                                 id={o.id}
                                                 items={o.items}

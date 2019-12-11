@@ -4,12 +4,13 @@ import Card from './Card';
 import icons from './icons';
 import KanbanContext from './KanbanContext';
 import { Scrollbars } from 'react-custom-scrollbars';
+import EditText from './EditText';
 
-
-const getItemStyle = (isDragging, draggableStyle) => {
+const getItemStyle = (isDragging, draggableStyle,height) => {
     return ({
         userSelect: "none",
-        ...draggableStyle
+        ...draggableStyle,
+        height : height - 50,
     })
 };
 
@@ -40,7 +41,7 @@ class Board extends Component {
 
         addBoardItem(addText , index);
         this.setState({addText : ''});
-        this.textareaDom.current.focus();
+        this.textareaDom.current.dom.current.focus();
         this.setScrollDown ()
 
     }
@@ -63,7 +64,7 @@ class Board extends Component {
       
     }
 
-    keyUp (index, e) {
+    keyUpTextarea (index, e) {
         if (e.keyCode === 13) {
             this.addItem(index)
         }
@@ -73,7 +74,7 @@ class Board extends Component {
     }
 
     render () {
-        const {title, subtitle, items, index, actions, rtl} = this.props;
+        const {title, subtitle, items, index, actions, rtl, height} = this.props;
         const {addText, isAddMode} = this.state;
         
         return (
@@ -88,6 +89,7 @@ class Board extends Component {
                 style={getItemStyle(
                     snapshot.isDragging,
                     provided.draggableProps.style,
+                    height
                 )}>
 
 
@@ -121,21 +123,19 @@ class Board extends Component {
                                 ))}
                                
                                 {   isAddMode &&
-                                    <div  key = {String(index)} className="r-board-addarea" >
-                                        <textarea 
-                                            ref={this.textareaDom}
-                                            autoFocus
-                                            onKeyUp={this.keyUp.bind(this,index)}
-                                            onChange={this.changeTextarea} value={addText}
-                                            placeholder={'یک نام برای کارت وارد کنید'}
-                                         >
-                                         </textarea>
 
-                                        <div className="r-board-addarea-actions">
-                                            <button type="button" className="r-button r-ripple r-success r-nospace"  onClick={this.addItem.bind(this, index)}> افزودن </button>
-                                            <button type="button" className="r-button r-ripple r-default r-nospace" onClick={this.toggleAddMode}> {icons.close} </button>
-                                        </div>
-                                    </div> 
+                                    <EditText
+                                        ref={this.textareaDom}
+                                        key = {String(index)}
+                                        autoFocus = {true}
+                                        keyUp={this.keyUpTextarea.bind(this, index)}
+                                        change={this.changeTextarea} 
+                                        value={addText}
+                                        saveText = {'افزودن'}
+                                        placeholder={'یک نام برای کارت وارد کنید'}
+                                        add={this.addItem.bind(this, index)}
+                                        close={this.toggleAddMode}
+                                    />
                 
                                 }
                                 {provided.placeholder}

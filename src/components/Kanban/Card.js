@@ -1,9 +1,8 @@
 import React, {Component} from 'react';
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
-import {Input} from './ReactForm';
-import $ from  'jquery';
 import KanbanContext from './KanbanContext';
-import icons from './ReactForm/icons';
+import EditText from './EditText';
+import icons from './icons';
 
 class Card extends Component {
     static contextType = KanbanContext;
@@ -18,34 +17,43 @@ class Card extends Component {
     
     state = {
         edit : false,
-        textareaValue : this.props.title
+        textareaValue : this.props.title,
     }
 
 
 
-    static getDerivedStateFromProps (props, state) {
-        if (props.title !== state.title ) {
-            return {
-                textareaValue : props.title
-            }
-        }
-    }
+    // static getDerivedStateFromProps (props, state) {
+    //     if (props.title !== state.title ) {
+    //         return {
+    //             textareaValue : props.title
+    //         }
+    //     }
+    // }
 
 
     startEdit = e => {
         this.setState({edit : true});
- 
     }
 
-    endEdit = e => {
-        this.setState({edit : false})
+    changeValue  = e => {
+        this.setState({textareaValue : e.target.value})
     }
 
-    edit = val => {
+    cancelEdit = () => {
+        const {index, parentIndex, title} = this.props;
+        const {updateBoardItem} = this.context;
+        debugger
+        updateBoardItem(title, parentIndex, index);
+        this.setState({edit : false});
+    }
+
+    edit = () => {
         const {index, parentIndex} = this.props;
         const {updateBoardItem} = this.context;
-
-        updateBoardItem(val, parentIndex, index)
+        const {textareaValue} = this.state;
+        debugger
+        updateBoardItem(textareaValue, parentIndex, index);
+        this.setState({edit : false});
 
     }
     remove = (e) =>{
@@ -56,14 +64,16 @@ class Card extends Component {
     }
     keyUp = e => {
         if (e.keyCode === 13) {
-            this.setState({edit : false})
+            this.edit()  
+        }
+        else if (e.keyCode === 27) {
+            this.cancelEdit()
         }
     }
     render (){
-        const {id, parentIndex, index, title} = this.props;
-        const {edit} = this.state;
+        const {id, index, title} = this.props;
+        const {edit, textareaValue} = this.state;
         const {rtl} = this.context;
-        
         return (
             <Draggable
                 key={id}
@@ -79,24 +89,34 @@ class Card extends Component {
                             snapshot.isDragging,
                             provided.draggableProps.style
                         )}>
-                        <div className="r-card-title">
 
-                            {/* {   edit && 
-                                <textarea 
-                                    ref={this.textareaDom}
-                                    autoFocus
-                                    value={title}
-                                    onChange={this.changeTextarea} 
-                                    value={title}
-                                >
-                                </textarea>
-                            } */}
-                            {!edit && title}
-                        </div>
-                        <div className="r-card-actions" >
-                            <div className="r-card-edit" onClick={this.startEdit}>{icons.edit}</div>
-                            <div className="r-card-close" onClick={this.remove}>{icons.close}</div>
-                        </div>
+                        {   edit && 
+                            <EditText
+                                ref={this.textareaDom}
+                                key = {String(index)}
+                                autoFocus = {true}
+                                keyUp={this.keyUp}
+                                change={this.changeValue} 
+                                value={textareaValue}
+                                saveText = {'ذخیره'}
+                                placeholder={'یک نام برای کارت وارد کنید'}
+                                add={this.edit}
+                                close={this.cancelEdit}
+                            />
+                        }
+                        {   !edit &&
+                            <div className="r-card-wrapper">
+
+                                <div className="r-card-title">
+                                    { title}
+                                </div>
+                                <div className="r-card-actions" >
+                                    <div className="r-card-edit" onClick={this.startEdit}>{icons.edit}</div>
+                                    <div className="r-card-close" onClick={this.remove}>{icons.close}</div>
+                                </div>
+                            </div>  
+                        }   
+
 
                     </div>
 

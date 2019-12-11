@@ -1,15 +1,22 @@
 .r-kanban {
     font-size: 1em;
-    display:flex;
+    width: 100%;
+    height: 100%;
     -webkit-user-select: none;
-            user-select: none;
+    user-select: none;
+    background: red;
+    display: flex;
+    overflow: hidden ;
+
+    overflow-x: auto;
+    
 }
 
 .r-board {
   position: relative;
   background: #F6F7F8;
-  width: 400px ;
-  height:600px;
+  min-width: 400px ;
+  height:500px;
   border: 1px solid #ccc;
   overflow:hidden ;
   border-radius: 3px;
@@ -17,9 +24,9 @@
   margin: 16px 8px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between
-
+  justify-content: space-between;
 }
+
 .r-board-header {
     padding: 16px;
 }
@@ -32,6 +39,7 @@
 }
 .r-board-addarea {
     padding: 0 16px;
+    margin-bottom: 10px
 }
 .r-board-addarea-actions {
     display: flex;
@@ -107,7 +115,8 @@
 /****************
 *  Card 
 *****************/
-.r-card {
+.r-card {}
+.r-card-wrapper {
   position: relative;
   font-size: .8em;
   padding: 12px;
@@ -173,10 +182,7 @@
     background: rgb(224, 224, 224);
 
 }
- .r-card-close span,
-.r-card-close svg{
-    width: 20px;
-}
+
 .r-card .r-input {
     margin: 0 ;
     position: relative;
