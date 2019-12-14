@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
+import { Draggable } from 'react-beautiful-dnd';
 import KanbanContext from './KanbanContext';
 import EditText from './EditText';
 import icons from './icons';
@@ -42,7 +42,6 @@ class Card extends Component {
     cancelEdit = () => {
         const {index, parentIndex, title} = this.props;
         const {updateBoardItem} = this.context;
-        debugger
         updateBoardItem(title, parentIndex, index);
         this.setState({edit : false});
     }
@@ -73,7 +72,6 @@ class Card extends Component {
     render (){
         const {id, index, title} = this.props;
         const {edit, textareaValue} = this.state;
-        const {rtl} = this.context;
         return (
             <Draggable
                 key={id}

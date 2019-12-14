@@ -3,14 +3,16 @@ import { Droppable, Draggable } from "react-beautiful-dnd";
 import Card from './Card';
 import icons from './icons';
 import KanbanContext from './KanbanContext';
-import { Scrollbars } from 'react-custom-scrollbars';
 import EditText from './EditText';
+import ScrollArea from 'react-scrollbar';
+import $ from 'jquery'
+
 
 const getItemStyle = (isDragging, draggableStyle,height) => {
     return ({
         userSelect: "none",
         ...draggableStyle,
-        height : height - 50,
+       height : height - 50,
     })
 };
 
@@ -57,10 +59,12 @@ class Board extends Component {
 
 
     setScrollDown (){
-        const h = this.scrollbarDom.current.getScrollHeight()
+       
         setTimeout(()=>{
-            this.scrollbarDom.current.scrollTop(h)
-        },10)
+            const h = $(this.scrollbarDom.current.wrapper).find('.scrollarea-content ').height()
+            console.log(h)
+            this.scrollbarDom.current.scrollArea.scrollYTo(h)
+        },100)
       
     }
 
@@ -74,7 +78,7 @@ class Board extends Component {
     }
 
     render () {
-        const {title, subtitle, items, index, actions, rtl, height} = this.props;
+        const {title, subtitle, items, index, height} = this.props;
         const {addText, isAddMode} = this.state;
         
         return (
@@ -107,7 +111,11 @@ class Board extends Component {
 
                 <Droppable key={`droppableSubItem${index}`} droppableId={`droppable${index}`} type="droppableSubItem">
                     {(provided, droppableSnapshot) => (
-                        <Scrollbars ref={this.scrollbarDom} >
+                            <ScrollArea
+                                speed={0.8}
+                                horizontal={false}
+                                ref={this.scrollbarDom}
+                            >
                             <div className="r-board-list" 
                             style={getListStyle(droppableSnapshot.isDraggingOver)}     
                             ref={provided.innerRef}>  
@@ -140,7 +148,7 @@ class Board extends Component {
                                 }
                                 {provided.placeholder}
                             </div>
-                        </Scrollbars>
+                        </ScrollArea>
                     )}
                     
                 </Droppable>   

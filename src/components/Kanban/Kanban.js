@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
+import { DragDropContext, Droppable } from 'react-beautiful-dnd';
 import {move, reorder} from './Functions';
 import Board from './Board';
 import KanbanContext from './KanbanContext';

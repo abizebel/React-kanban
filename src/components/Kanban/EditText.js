@@ -23,7 +23,7 @@ class EditText extends Component {
     }
 
     render (){
-        const { add, close, value, keyUp, autoFocus,placeholder, saveText} = this.props;
+        const { add, close, keyUp, autoFocus,placeholder, saveText} = this.props;
         const {text} = this.state;
         return (
             <div className="r-board-addarea" >
