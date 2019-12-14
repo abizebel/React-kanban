@@ -59,10 +59,8 @@ class Board extends Component {
 
 
     setScrollDown (){
-       
         setTimeout(()=>{
             const h = $(this.scrollbarDom.current.wrapper).find('.scrollarea-content ').height()
-            console.log(h)
             this.scrollbarDom.current.scrollArea.scrollYTo(h)
         },100)
       
@@ -70,6 +68,7 @@ class Board extends Component {
 
     keyUpTextarea (index, e) {
         if (e.keyCode === 13) {
+            e.preventDefault()
             this.addItem(index)
         }
         else if (e.keyCode === 27) {
@@ -80,7 +79,6 @@ class Board extends Component {
     render () {
         const {title, subtitle, items, index, height} = this.props;
         const {addText, isAddMode} = this.state;
-        
         return (
      
             <Draggable key={`droppable${index}`} draggableId={`droppable${index}`} index={index}>

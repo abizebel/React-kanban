@@ -14,7 +14,16 @@ class EditText extends Component {
             text : value
         }
     }
+    static getDerivedStateFromProps (props, state) {
+        if (props.value !== state.text) {
+            console.log( props.value)
+            return {
+                text : props.value
+            }
+        }
 
+        return null
+    }
 
     handleChange = e => {
         const {change} = this.props;
