@@ -1,9 +1,13 @@
+
 .r-kanban {
+      direction: ltr ;
+
     font-size: 1em;
     width: 100%;
     height: 100%;
     -webkit-user-select: none;
-    user-select: none;
+    -moz-user-select: none;
+         user-select: none;
     display: flex;
     overflow: hidden ;
     overflow-x: auto;
