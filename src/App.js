@@ -51,19 +51,22 @@ function App() {
         console.log(val)
       }}
       api ={{
-        add : (data) => {
+        addCard : (data) => {
           return {
             status : true,
             id : 5
           }
         },
-        remove : (data) => {
+        removeCard : (data) => {
           return true
         },
-        edit : (data) => {
+        editCard : (data) => {
           return true
         },
-        move : (data) => {
+        moveCard : (data) => {
+          return true
+        },
+        reorderCard : (data) => {
           return true
         }
       }}

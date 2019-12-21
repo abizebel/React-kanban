@@ -27,7 +27,7 @@ class Kanban extends Component {
     async addBoardItem  (obj)  {
         const {api, mapping} = this.props;
         const {addText, index} = obj;
-        const res = await api.add(obj)
+        const res = await api.addCard(obj)
 
         if (res.status) {
             if (addText.trim().length === 0) return ;
@@ -45,7 +45,7 @@ class Kanban extends Component {
         const {api, mapping} = this.props;
         const {parentIndex, index} = obj;
 
-        const removeStatus = await api.remove(obj) ;
+        const removeStatus = await api.removeCard(obj) ;
 
         if (removeStatus) {
             let boards = Array.from(this.state.boards);
@@ -59,11 +59,11 @@ class Kanban extends Component {
      *
      * @returns {boolean} from callback
      */
-     async  updateBoardItem (obj){
+    async updateBoardItem (obj){
         const {api, mapping} = this.props;
 
         const {newTitle, parentIndex, index} = obj;
-        const editStatus = await api.edit(obj);
+        const editStatus = await api.editCard(obj);
 
         if (editStatus) {
             let boards = Array.from(this.state.boards);
@@ -72,18 +72,37 @@ class Kanban extends Component {
         }
     }
     // a little function to help us with reordering the result
-    reorder = (list, startIndex, endIndex) => {
+    reorder = async (list, startIndex, endIndex,boardDestination,BaseResult) => { 
+        const {api} = this.props;
+        const {boards} = this.state;
         const result = Array.from(list);
         const [removed] = result.splice(startIndex, 1);
-        result.splice(endIndex, 0, removed);
+        debugger
+        const obj ={
+            card : {
+                ...removed,
+                _order : endIndex
+            },
+            board : {
+                ...boards[boardDestination]
+            }
+        }
+        const reOrderStatus =  await api.reorderCard(obj);
 
-        return result;
+        if (reOrderStatus) {
+            result.splice(endIndex, 0, removed);
+            return result;
+        }
+
+
+        return BaseResult
+
     };
 
     /**
      * Moves an item from one list to another list.
      */
-    move = (source, destination, droppableSource, droppableDestination, boardSource, boardDestination) => {
+    move = async(source, destination, droppableSource, droppableDestination, boardSource, boardDestination,BaseResult) => {
         
         const {api} = this.props;
         const {boards} = this.state;
@@ -91,13 +110,17 @@ class Kanban extends Component {
         const destClone = Array.from(destination);
         const [removed] = sourceClone.splice(droppableSource.index, 1);
 
-
         const obj ={
-            Id  :removed.Id,
-            Title : removed.Title,
-            InitiativeTypeId : boards[boardDestination].Id
+            card : {
+                ...removed,
+                _order : droppableDestination.index
+            },
+            board : {
+                ...boards[boardDestination]
+            }
         }
-        const moveStats = api.move(obj);
+
+        const moveStats = await api.moveCard(obj);
 
         if (moveStats) {
             destClone.splice(droppableDestination.index, 0, removed);
@@ -107,15 +130,14 @@ class Kanban extends Component {
     
             return result;
         }
-
-        return boards
+        return BaseResult
         
     };
 
 
 
-    onDragEnd = result => {
-        const { source, destination } = result;
+    onDragEnd = async BaseResult => {
+        const { source, destination } = BaseResult;
         const {change, mapping} = this.props;
 
         if (!destination) {
@@ -123,7 +145,7 @@ class Kanban extends Component {
         }
 
         //Moving Boards
-        if (result.type === "droppableItem") {
+        if (BaseResult.type === "droppableItem") {
             const boards = this.reorder(
                 this.state.boards,
                 source.index,
@@ -134,18 +156,20 @@ class Kanban extends Component {
             change(boards)
         }
         //Moving Board Items
-        else if (result.type === "droppableSubItem") {
+        else if (BaseResult.type === "droppableSubItem") {
             //Reorder
             if (source.droppableId === destination.droppableId) {
-                const id  = source.droppableId[source.droppableId.length - 1];
-                const result = this.reorder(
-                    this.state.boards[id][mapping.boardItems],
+                const sourceId  = source.droppableId[source.droppableId.length - 1];
+                const result = await this.reorder(
+                    this.state.boards[sourceId][mapping.boardItems],
                     source.index,
-                    destination.index
+                    destination.index,
+                    sourceId,
+                    BaseResult
                 );
     
                 this.setState(prevState => {
-                    prevState.boards[id][mapping.boardItems] = result;
+                    prevState.boards[sourceId][mapping.boardItems] = result;
                     change(prevState.boards)
                     return {boards : prevState.boards}
                 });
@@ -157,14 +181,14 @@ class Kanban extends Component {
                 const sourceId  = source.droppableId[source.droppableId.length - 1];
                 const desId  = destination.droppableId[destination.droppableId.length - 1];
 
-                
-                const result = this.move(
+                const result = await this.move(
                     this.state.boards[sourceId][mapping.boardItems],
                     this.state.boards[desId][mapping.boardItems],
                     source,
                     destination,
                     sourceId,
-                    desId
+                    desId,
+                    BaseResult
                 );
     
                 this.setState(prevState => {
