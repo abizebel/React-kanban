@@ -40,8 +40,9 @@ class Board extends Component {
     addItem (index){
         const {addBoardItem} = this.context;
         const {addText} = this.state;
+        const {data} = this.props;
 
-        addBoardItem(addText , index);
+        addBoardItem({addText, index, ...data});
         this.setState({addText : ''});
         this.textareaDom.current.dom.current.focus();
         this.setScrollDown ()
@@ -79,6 +80,8 @@ class Board extends Component {
     render () {
         const {title, subtitle, items, index, height} = this.props;
         const {addText, isAddMode} = this.state;
+        const {mapping} = this.context;
+        
         return (
      
             <Draggable key={`droppable${index}`} draggableId={`droppable${index}`} index={index}>
@@ -99,12 +102,12 @@ class Board extends Component {
                     <div className="r-board-title">
                         {icons.objective} {title}
                     </div>
-                    <div className="r-board-subtitle">
+                    {/* <div className="r-board-subtitle">
                         {icons.kpi} {subtitle}
-                    </div>
-                    <div className="r-board-actions">
+                    </div> */}
+                    {/* <div className="r-board-actions">
                         {icons.more}
-                    </div>
+                    </div> */}
                 </div>  
 
                 <Droppable key={`droppableSubItem${index}`} droppableId={`droppable${index}`} type="droppableSubItem">
@@ -121,9 +124,10 @@ class Board extends Component {
                                 {items.map((item, i) => (
                                     <Card
                                         key = {String(index) + String(i)}
-                                        title = {item.title}
+                                        title = {item[mapping.cardTitle]}
                                         id = {String(index) + String(i)}
                                         index = {i}
+                                        data={item}
                                         parentIndex={index}
                                     />
                                 ))}

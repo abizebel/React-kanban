@@ -29,11 +29,7 @@ const data = [
     subtitle : 'جذب 10 نماینده از مشاوران',
     items : [ ] 
   },
-  {
-    title : 'افزایش فروش پوینتر 3',
-    subtitle : 'جذب 10 نماینده از مشاوران',
-    items : [ ] 
-  }
+
 ]
 
 
@@ -41,12 +37,35 @@ const data = [
 function App() {
   return (
     <Kanban
+      mapping = {{
+        boardTitle :  'title',
+        boardItems :'items',
+        cardTitle :  'title',
+        cardId : 'id'
+    }}
       width={'100%'}
       height={600}
       rtl={true}
       data = {data}
       change={(val)=>{
         console.log(val)
+      }}
+      api ={{
+        add : (data) => {
+          return {
+            status : true,
+            id : 5
+          }
+        },
+        remove : (data) => {
+          return true
+        },
+        edit : (data) => {
+          return true
+        },
+        move : (data) => {
+          return true
+        }
       }}
     />
   );

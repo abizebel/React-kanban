@@ -1,114 +1,114 @@
 
 .r-kanban {
-      direction: ltr ;
+    direction: ltr ;
 
-    font-size: 1em;
-    width: 100%;
-    height: 100%;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-         user-select: none;
-    display: flex;
-    overflow: hidden ;
-    overflow-x: auto;
-    
+  font-size: 1em;
+  width: 100%;
+  height: 100%;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+       user-select: none;
+  display: flex;
+  overflow: hidden ;
+  overflow-x: auto;
+  
 }
 
 .r-board {
-  position: relative;
-  background: #F6F7F8;
-  width: 500px ;
-  height:500px;
-  border: 1px solid #ccc;
-  overflow:hidden ;
-  border-radius: 3px;
-  box-shadow: 0 1px 4px 0 rgba(0,0,0,0.2);
-  margin: 16px 8px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+position: relative;
+background: #F6F7F8;
+width: 500px ;
+height:500px;
+border: 1px solid #ccc;
+overflow:hidden ;
+border-radius: 3px;
+box-shadow: 0 1px 4px 0 rgba(0,0,0,0.2);
+margin: 16px 8px;
+display: flex;
+flex-direction: column;
+justify-content: space-between;
 }
 
 .r-board-header {
-    padding: 16px;
+  padding: 16px;
 }
 .r-board-footer {
-    padding:8px 16px 0 16px;
+  padding:8px 16px 0 16px;
 }
 .r-board-list {
-    width: 100%;
-    min-height: 300px;
+  width: 100%;
+  min-height: 300px;
 }
 .r-board-addarea {
-    padding: 0 16px;
-    margin-bottom: 10px
+  padding: 0 16px;
+  margin-bottom: 10px
 }
 .r-board-addarea-actions {
-    display: flex;
-    justify-content: flex-start;
+  display: flex;
+  justify-content: flex-start;
 }
 .r-board-addarea textarea {
-    border-radius: 3px;
-    resize: vertical;
-    font-family: inherit;
-    padding: 10px;
-    width: 100%;
-    box-sizing: border-box;
-    font-size: .8em;
-    margin-bottom: 5px;
-    border: 1px solid rgb(146, 170, 248);
+  border-radius: 3px;
+  resize: vertical;
+  font-family: inherit;
+  padding: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: .8em;
+  margin-bottom: 5px;
+  border: 1px solid rgb(146, 170, 248);
 }
 
 
 .r-board-add {
-    font-size: .85em;
-    line-height: 24px;
-    width: 100%;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    display: inline-flex;
-    flex-direction: row;
-    color: #bbb;
-    cursor: pointer;
-}
-.r-board-add svg,
-.r-board-add span{
-    width: 24px;
-    fill :#bbb;
-    color: #bbb;
-    
-}
-
-.r-board-title ,
-.r-board-subtitle {
+  font-size: .85em;
   line-height: 24px;
   width: 100%;
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
-   display: inline-flex;
-
+  display: inline-flex;
+  flex-direction: row;
+  color: #bbb;
+  cursor: pointer;
+}
+.r-board-add svg,
+.r-board-add span{
+  width: 24px;
+  fill :#bbb;
+  color: #bbb;
   
+}
+
+.r-board-title ,
+.r-board-subtitle {
+line-height: 24px;
+width: 100%;
+white-space: nowrap;
+text-overflow: ellipsis;
+overflow: hidden;
+ display: inline-flex;
+
+
 }
 .r-board-title span,
 .r-board-title svg,
 .r-board-subtitle span,
 .r-board-subtitle svg{
-  width: 24px ;
-  height: 24px ;
-  padding:0 5px
+width: 24px ;
+height: 24px ;
+padding:0 5px
 }
 
 .r-board-subtitle {
-    font-size: .8em;
+  font-size: .8em;
 }
 .r-board-actions {
-  width: 24px;
-  fill: #bbb;
-  position: absolute;
-  top: 16px;
-  right : 16px;
+width: 24px;
+fill: #bbb;
+position: absolute;
+top: 16px;
+right : 16px;
 }
 
 /****************
@@ -116,103 +116,103 @@
 *****************/
 .r-card {}
 .r-card-wrapper {
-  position: relative;
-  font-size: .8em;
-  padding: 12px;
-  border: 1px solid #CBCBCB;
-  border-radius: 3px;
-  margin-bottom: 8px;
-  background: #fff;
-  overflow: hidden;
-  color: #636363;
-  margin:0 16px;
-  margin-bottom: 8px;
+position: relative;
+font-size: .8em;
+padding: 12px;
+border: 1px solid #CBCBCB;
+border-radius: 3px;
+margin-bottom: 8px;
+background: #fff;
+overflow: hidden;
+color: #636363;
+margin:0 16px;
+margin-bottom: 8px;
 
 }
 
 .r-card-title {
-    width: calc(100% - 32px);
+  width: calc(100% - 32px);
 
 }
 .r-card .r-card-title {
-    width: 100%;
+  width: 100%;
 }
 .r-card.edit {
-    display: block;
-    justify-content: unset;
+  display: block;
+  justify-content: unset;
 
 }
 
 
 /* Card Actions */
 .r-card-actions {
-    opacity: 0;
-    visibility: hidden;
-    position:absolute;
-    width: 100%;
-    left: 0;
-    top: 0;
-    display:flex;
-    justify-content: space-between;
-    transition: all 0.2s ease-in-out;
-    margin-top: -60px;  
+  opacity: 0;
+  visibility: hidden;
+  position:absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+  display:flex;
+  justify-content: space-between;
+  transition: all 0.2s ease-in-out;
+  margin-top: -60px;  
 }
 .r-card:hover .r-card-actions{
-    visibility: visible;
-    opacity: 1;
-    margin-top: 0;
+  visibility: visible;
+  opacity: 1;
+  margin-top: 0;
 
- }
+}
 .r-card-close, 
 .r-card-edit{
-    cursor: pointer ;
-    width: 20px;
-    height: 20px;
-    line-height: 20px;
-    text-align: center;
-    padding: 5px;
-    background: rgba(255,255,255,.8);
+  cursor: pointer ;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  text-align: center;
+  padding: 5px;
+  background: rgba(255,255,255,.8);
 
 
 }
 
 .r-card-close:hover,
 .r-card-edit:hover {
-    background: rgb(224, 224, 224);
+  background: rgb(224, 224, 224);
 
 }
 
 .r-card .r-input {
-    margin: 0 ;
-    position: relative;
-    bottom: 5px;
+  margin: 0 ;
+  position: relative;
+  bottom: 5px;
 }
 
 /* Rtl */
 .r-rtl .r-card {
-    text-align: right;
-    direction: rtl;
+  text-align: right;
+  direction: rtl;
 }
 .r-rtl .r-board-addarea {
-    direction: rtl;
+  direction: rtl;
 }
 .r-rtl .r-board-actions  {
-  left: 16px
+left: 16px
 }
 
 .r-rtl .r-board-header {
-  direction: rtl
+direction: rtl
 }
 
 .r-rtl .r-board-footer  {
-    text-align: right;
-    direction: rtl
+  text-align: right;
+  direction: rtl
 }
 
 .r-rtl .r-board-add-cart{
-    flex-direction: row-reverse;
+  flex-direction: row-reverse;
 }
 .r-rtl .r-board-addarea textarea {
-    direction: rtl;
-    text-align: right
+  direction: rtl;
+  text-align: right
 }

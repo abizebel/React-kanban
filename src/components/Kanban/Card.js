@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Draggable } from 'react-beautiful-dnd';
+import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 import KanbanContext from './KanbanContext';
 import EditText from './EditText';
 import icons from './icons';
@@ -40,26 +40,24 @@ class Card extends Component {
     }
 
     cancelEdit = () => {
-        const {index, parentIndex, title} = this.props;
-        const {updateBoardItem} = this.context;
-        updateBoardItem(title, parentIndex, index);
-        this.setState({edit : false});
+        const {title} = this.props;
+        this.setState({edit : false, textareaValue : title});
     }
 
     edit = () => {
-        const {index, parentIndex} = this.props;
+        const {index, parentIndex, data} = this.props;
         const {updateBoardItem} = this.context;
         const {textareaValue} = this.state;
-        debugger
-        updateBoardItem(textareaValue, parentIndex, index);
+        
+        updateBoardItem({newTitle : textareaValue, parentIndex, index, ...data});
         this.setState({edit : false});
 
     }
     remove = (e) =>{
-        const {index, parentIndex} = this.props;
+        const {index, parentIndex, data} = this.props;
         const {removeBoardItem} = this.context;
 
-        removeBoardItem(parentIndex, index)
+        removeBoardItem({parentIndex, index, ...data})
     }
     keyUp = e => {
         if (e.keyCode === 13) {
@@ -72,6 +70,7 @@ class Card extends Component {
     render (){
         const {id, index, title} = this.props;
         const {edit, textareaValue} = this.state;
+        const {rtl} = this.context;
         return (
             <Draggable
                 key={id}

@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
-import { DragDropContext, Droppable } from 'react-beautiful-dnd';
-import {move, reorder} from './Functions';
+import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 import Board from './Board';
 import KanbanContext from './KanbanContext';
 import './Kanban.css';
@@ -16,41 +15,116 @@ class Kanban extends Component {
 
     state = {
         boards : this.props.data
+    }
+
+    addBoard (title) {}
+
+    /**
+     *
+     * @returns {Object} from callback
+     * {status : Boolean, id : Number }
+     */
+    async addBoardItem  (obj)  {
+        const {api, mapping} = this.props;
+        const {addText, index} = obj;
+        const res = await api.add(obj)
+
+        if (res.status) {
+            if (addText.trim().length === 0) return ;
+            let boards = Array.from(this.state.boards);
+            boards[index][mapping.boardItems].push({[mapping.cardId] : res.id, [mapping.cardTitle] : addText});
+            this.setState(boards)
+        }
+
+    }
+    /**
+     *
+     * @returns {boolean} from callback
+     */
+    async removeBoardItem (obj){
+        const {api, mapping} = this.props;
+        const {parentIndex, index} = obj;
+
+        const removeStatus = await api.remove(obj) ;
+
+        if (removeStatus) {
+            let boards = Array.from(this.state.boards);
+            boards[parentIndex][mapping.boardItems].splice(index, 1)
+            this.setState(boards)  
+        }
+  
+    }
+
+    /**
+     *
+     * @returns {boolean} from callback
+     */
+     async  updateBoardItem (obj){
+        const {api, mapping} = this.props;
+
+        const {newTitle, parentIndex, index} = obj;
+        const editStatus = await api.edit(obj);
+
+        if (editStatus) {
+            let boards = Array.from(this.state.boards);
+            boards[parentIndex][mapping.boardItems][index][mapping.cardTitle] = newTitle
+            this.setState(boards) 
+        }
+    }
+    // a little function to help us with reordering the result
+    reorder = (list, startIndex, endIndex) => {
+        const result = Array.from(list);
+        const [removed] = result.splice(startIndex, 1);
+        result.splice(endIndex, 0, removed);
+
+        return result;
     };
 
-    addBoard  (title)  {
+    /**
+     * Moves an item from one list to another list.
+     */
+    move = (source, destination, droppableSource, droppableDestination, boardSource, boardDestination) => {
+        
+        const {api} = this.props;
+        const {boards} = this.state;
+        const sourceClone = Array.from(source);
+        const destClone = Array.from(destination);
+        const [removed] = sourceClone.splice(droppableSource.index, 1);
 
-    }
 
-    addBoardItem  (val, i)  {
-        if (val.trim().length === 0) return ;
-        let boards = Array.from(this.state.boards);
-        boards[i].items.push({ title : val});
-        this.setState(boards)
-    }
-    updateBoardItem (val, parentIndex, index){
-        let boards = Array.from(this.state.boards);
-        boards[parentIndex].items[index].title = val
-        this.setState(boards)        
-    }
-    removeBoardItem (parentIndex, index){
-        let boards = Array.from(this.state.boards);
-        boards[parentIndex].items.splice(index, 1)
-        this.setState(boards)    
-    }
+        const obj ={
+            Id  :removed.Id,
+            Title : removed.Title,
+            InitiativeTypeId : boards[boardDestination].Id
+        }
+        const moveStats = api.move(obj);
+
+        if (moveStats) {
+            destClone.splice(droppableDestination.index, 0, removed);
+            const result = {};
+            result[droppableSource.droppableId] = sourceClone;
+            result[droppableDestination.droppableId] = destClone;
+    
+            return result;
+        }
+
+        return boards
+        
+    };
+
 
 
     onDragEnd = result => {
         const { source, destination } = result;
-        const {change} = this.props;
+        const {change, mapping} = this.props;
 
         if (!destination) {
             return;
         }
 
-
+        //Moving Boards
         if (result.type === "droppableItem") {
-            const boards = reorder(
+            const boards = this.reorder(
                 this.state.boards,
                 source.index,
                 destination.index
@@ -59,35 +133,43 @@ class Kanban extends Component {
             this.setState({boards});
             change(boards)
         }
+        //Moving Board Items
         else if (result.type === "droppableSubItem") {
+            //Reorder
             if (source.droppableId === destination.droppableId) {
                 const id  = source.droppableId[source.droppableId.length - 1];
-                const result = reorder(
-                    this.state.boards[id].items,
+                const result = this.reorder(
+                    this.state.boards[id][mapping.boardItems],
                     source.index,
                     destination.index
                 );
     
                 this.setState(prevState => {
-                    prevState.boards[id].items = result;
+                    prevState.boards[id][mapping.boardItems] = result;
                     change(prevState.boards)
                     return {boards : prevState.boards}
                 });
                
-            } else {
+            }
+            //Move 
+            else {
+                 
                 const sourceId  = source.droppableId[source.droppableId.length - 1];
                 const desId  = destination.droppableId[destination.droppableId.length - 1];
+
                 
-                const result = move(
-                    this.state.boards[sourceId].items,
-                    this.state.boards[desId].items,
+                const result = this.move(
+                    this.state.boards[sourceId][mapping.boardItems],
+                    this.state.boards[desId][mapping.boardItems],
                     source,
-                    destination
+                    destination,
+                    sourceId,
+                    desId
                 );
     
                 this.setState(prevState => {
-                    prevState.boards[sourceId].items = result[`droppable${sourceId}`];
-                    prevState.boards[desId].items = result[`droppable${desId}`];
+                    prevState.boards[sourceId][mapping.boardItems] = result[`droppable${sourceId}`];
+                    prevState.boards[desId][mapping.boardItems] = result[`droppable${desId}`];
                     change(prevState.boards)
                     return {boards : prevState.boards}
                 });
@@ -110,17 +192,19 @@ class Kanban extends Component {
 
 
     render() {
-        const {rtl, height} = this.props;
+        const {rtl, height, mapping} = this.props;
         const {boards} = this.state;
+        
         const rtlClass = rtl ? 'r-rtl' : '';
         const contextValue = {
             rtl,
+            mapping,
             addBoardItem : this.addBoardItem.bind(this),
             updateBoardItem : this.updateBoardItem.bind(this),
             removeBoardItem : this.removeBoardItem.bind(this),
         }
 
-
+        
         return (
             <KanbanContext.Provider value={contextValue}>
                 <DragDropContext onDragEnd={this.onDragEnd}>
@@ -137,11 +221,13 @@ class Kanban extends Component {
                                                 height={height}
                                                 rtl={rtl}
                                                 id={o.id}
-                                                items={o.items}
-                                                title={o.title} 
+                                                items={o[mapping.boardItems]}
+                                                title={o[mapping.boardTitle]} 
                                                 subtitle={o.subtitle}
+                                                data={o}
                                                 index={i}
                                                 key={i}
+
                                             />
                                         )
                                     })
