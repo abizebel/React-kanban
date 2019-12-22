@@ -72,12 +72,12 @@ class Kanban extends Component {
         }
     }
     // a little function to help us with reordering the result
-    reorder = async (list, startIndex, endIndex,boardDestination,BaseResult) => { 
+    reorderCard = async (list, startIndex, endIndex,boardDestination,BaseResult) => { 
         const {api} = this.props;
         const {boards} = this.state;
         const result = Array.from(list);
         const [removed] = result.splice(startIndex, 1);
-        debugger
+        
         const obj ={
             card : {
                 ...removed,
@@ -98,11 +98,20 @@ class Kanban extends Component {
         return BaseResult
 
     };
+    // a little function to help us with reordering the result
+    reorderBoard = (list, startIndex, endIndex) => { 
+        const result = Array.from(list);
+        const [removed] = result.splice(startIndex, 1);
+
+        result.splice(endIndex, 0, removed);
+        return result;
+      
+    };
 
     /**
      * Moves an item from one list to another list.
      */
-    move = async(source, destination, droppableSource, droppableDestination, boardSource, boardDestination,BaseResult) => {
+    moveCard = async(source, destination, droppableSource, droppableDestination, boardSource, boardDestination,BaseResult) => {
         
         const {api} = this.props;
         const {boards} = this.state;
@@ -146,10 +155,10 @@ class Kanban extends Component {
 
         //Moving Boards
         if (BaseResult.type === "droppableItem") {
-            const boards = this.reorder(
+            const boards =  this.reorderBoard(
                 this.state.boards,
                 source.index,
-                destination.index
+                destination.index,
             );
 
             this.setState({boards});
@@ -160,7 +169,7 @@ class Kanban extends Component {
             //Reorder
             if (source.droppableId === destination.droppableId) {
                 const sourceId  = source.droppableId[source.droppableId.length - 1];
-                const result = await this.reorder(
+                const result = await this.reorderCard(
                     this.state.boards[sourceId][mapping.boardItems],
                     source.index,
                     destination.index,
@@ -181,7 +190,7 @@ class Kanban extends Component {
                 const sourceId  = source.droppableId[source.droppableId.length - 1];
                 const desId  = destination.droppableId[destination.droppableId.length - 1];
 
-                const result = await this.move(
+                const result = await this.moveCard(
                     this.state.boards[sourceId][mapping.boardItems],
                     this.state.boards[desId][mapping.boardItems],
                     source,
