@@ -61,6 +61,7 @@ class Board extends Component {
 
     setScrollDown (){
         setTimeout(()=>{
+            debugger
             const h = $(this.scrollbarDom.current.wrapper).find('.scrollarea-content ').height()
             this.scrollbarDom.current.scrollArea.scrollYTo(h)
         },100)
@@ -116,6 +117,8 @@ class Board extends Component {
                                 speed={0.8}
                                 horizontal={false}
                                 ref={this.scrollbarDom}
+                                style={{height : 300}}
+                                onScroll = {() => {}}
                             >
                             <div className="r-board-list" 
                             style={getListStyle(droppableSnapshot.isDraggingOver)}     
